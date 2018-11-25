@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PattomTiruvanantapuram" pageWidth="648" pageHeight="842" columnWidth="608" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebf3c810-b40d-4e35-8709-8c85730d75ab">
+	<property name="ireport.zoom" value="1.3636363636363644"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="accyear" class="java.lang.String"/>
+	<parameter name="strength" class="java.lang.String"/>
+	<parameter name="locationName" class="java.lang.String"/>
+	<parameter name="custSchoolAddres" class="java.lang.String"/>
+	<parameter name="custSchoollogo" class="java.lang.String"/>
+	<parameter name="custSchoolboardlogo" class="java.lang.String"/>
+	<parameter name="custSchoolaffilno" class="java.lang.String"/>
+	<parameter name="custSchoolno" class="java.lang.String"/>
+	<parameter name="custSchoolwebsit" class="java.lang.String"/>
+	<parameter name="custSchoolEmail" class="java.lang.String"/>
+	<parameter name="custSchoolAddres1" class="java.lang.String"/>
+	<parameter name="branch" class="java.lang.String"/>
+	<parameter name="status" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="accYear" class="java.lang.String">
+		<fieldDescription><![CDATA[accYear]]></fieldDescription>
+	</field>
+	<field name="accyearId" class="java.lang.String">
+		<fieldDescription><![CDATA[accyearId]]></fieldDescription>
+	</field>
+	<field name="accyearname" class="java.lang.String">
+		<fieldDescription><![CDATA[accyearname]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="admissionNo" class="java.lang.String">
+		<fieldDescription><![CDATA[admissionNo]]></fieldDescription>
+	</field>
+	<field name="attendenceDate" class="java.lang.String">
+		<fieldDescription><![CDATA[attendenceDate]]></fieldDescription>
+	</field>
+	<field name="attendenceStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[attendenceStatus]]></fieldDescription>
+	</field>
+	<field name="caste" class="java.lang.String">
+		<fieldDescription><![CDATA[caste]]></fieldDescription>
+	</field>
+	<field name="casteCategory" class="java.lang.String">
+		<fieldDescription><![CDATA[casteCategory]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="classId" class="java.lang.String">
+		<fieldDescription><![CDATA[classId]]></fieldDescription>
+	</field>
+	<field name="class_and_section" class="java.lang.String">
+		<fieldDescription><![CDATA[class_and_section]]></fieldDescription>
+	</field>
+	<field name="classname" class="java.lang.String">
+		<fieldDescription><![CDATA[classname]]></fieldDescription>
+	</field>
+	<field name="count" class="java.lang.Integer">
+		<fieldDescription><![CDATA[count]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="dob" class="java.lang.String">
+		<fieldDescription><![CDATA[dob]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.lang.String">
+		<fieldDescription><![CDATA[endDate]]></fieldDescription>
+	</field>
+	<field name="fatherName" class="java.lang.String">
+		<fieldDescription><![CDATA[fatherName]]></fieldDescription>
+	</field>
+	<field name="fatherResidenceNo" class="java.lang.String">
+		<fieldDescription><![CDATA[fatherResidenceNo]]></fieldDescription>
+	</field>
+	<field name="fromdate" class="java.lang.String">
+		<fieldDescription><![CDATA[fromdate]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<fieldDescription><![CDATA[location]]></fieldDescription>
+	</field>
+	<field name="locationId" class="java.lang.String">
+		<fieldDescription><![CDATA[locationId]]></fieldDescription>
+	</field>
+	<field name="locationName" class="java.lang.String">
+		<fieldDescription><![CDATA[locationName]]></fieldDescription>
+	</field>
+	<field name="mobileno" class="java.lang.String">
+		<fieldDescription><![CDATA[mobileno]]></fieldDescription>
+	</field>
+	<field name="motherName" class="java.lang.String">
+		<fieldDescription><![CDATA[motherName]]></fieldDescription>
+	</field>
+	<field name="motherResidenceNo" class="java.lang.String">
+		<fieldDescription><![CDATA[motherResidenceNo]]></fieldDescription>
+	</field>
+	<field name="occupation" class="java.lang.String">
+		<fieldDescription><![CDATA[occupation]]></fieldDescription>
+	</field>
+	<field name="occupationId" class="java.lang.String">
+		<fieldDescription><![CDATA[occupationId]]></fieldDescription>
+	</field>
+	<field name="religion" class="java.lang.String">
+		<fieldDescription><![CDATA[religion]]></fieldDescription>
+	</field>
+	<field name="residenceNo" class="java.lang.String">
+		<fieldDescription><![CDATA[residenceNo]]></fieldDescription>
+	</field>
+	<field name="rollNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[rollNo]]></fieldDescription>
+	</field>
+	<field name="searchTerm" class="java.lang.String">
+		<fieldDescription><![CDATA[searchTerm]]></fieldDescription>
+	</field>
+	<field name="section" class="java.lang.String">
+		<fieldDescription><![CDATA[section]]></fieldDescription>
+	</field>
+	<field name="sectionId" class="java.lang.String">
+		<fieldDescription><![CDATA[sectionId]]></fieldDescription>
+	</field>
+	<field name="sectionname" class="java.lang.String">
+		<fieldDescription><![CDATA[sectionname]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[sno]]></fieldDescription>
+	</field>
+	<field name="specializationId" class="java.lang.String">
+		<fieldDescription><![CDATA[specializationId]]></fieldDescription>
+	</field>
+	<field name="specializationName" class="java.lang.String">
+		<fieldDescription><![CDATA[specializationName]]></fieldDescription>
+	</field>
+	<field name="startDate" class="java.lang.String">
+		<fieldDescription><![CDATA[startDate]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="streamId" class="java.lang.String">
+		<fieldDescription><![CDATA[streamId]]></fieldDescription>
+	</field>
+	<field name="streamname" class="java.lang.String">
+		<fieldDescription><![CDATA[streamname]]></fieldDescription>
+	</field>
+	<field name="studentId" class="java.lang.String">
+		<fieldDescription><![CDATA[studentId]]></fieldDescription>
+	</field>
+	<field name="studentRollNo" class="java.lang.String">
+		<fieldDescription><![CDATA[studentRollNo]]></fieldDescription>
+	</field>
+	<field name="student_gender_var" class="java.lang.String">
+		<fieldDescription><![CDATA[student_gender_var]]></fieldDescription>
+	</field>
+	<field name="student_mothermobileno_var" class="java.lang.String">
+		<fieldDescription><![CDATA[student_mothermobileno_var]]></fieldDescription>
+	</field>
+	<field name="student_mothername_var" class="java.lang.String">
+		<fieldDescription><![CDATA[student_mothername_var]]></fieldDescription>
+	</field>
+	<field name="studentidlabel" class="java.lang.String">
+		<fieldDescription><![CDATA[studentidlabel]]></fieldDescription>
+	</field>
+	<field name="studentnamelabel" class="java.lang.String">
+		<fieldDescription><![CDATA[studentnamelabel]]></fieldDescription>
+	</field>
+	<field name="teacherName" class="java.lang.String">
+		<fieldDescription><![CDATA[teacherName]]></fieldDescription>
+	</field>
+	<field name="teachertId" class="java.lang.String">
+		<fieldDescription><![CDATA[teachertId]]></fieldDescription>
+	</field>
+	<field name="teachertype" class="java.lang.String">
+		<fieldDescription><![CDATA[teachertype]]></fieldDescription>
+	</field>
+	<field name="termId" class="java.lang.String">
+		<fieldDescription><![CDATA[termId]]></fieldDescription>
+	</field>
+	<field name="termStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[termStatus]]></fieldDescription>
+	</field>
+	<field name="termStatusId" class="java.lang.String">
+		<fieldDescription><![CDATA[termStatusId]]></fieldDescription>
+	</field>
+	<field name="termname" class="java.lang.String">
+		<fieldDescription><![CDATA[termname]]></fieldDescription>
+	</field>
+	<field name="todate" class="java.lang.String">
+		<fieldDescription><![CDATA[todate]]></fieldDescription>
+	</field>
+	<field name="total_amt" class="java.lang.Double">
+		<fieldDescription><![CDATA[total_amt]]></fieldDescription>
+	</field>
+	<field name="total_strength" class="java.lang.String">
+		<fieldDescription><![CDATA[total_strength]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[value]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="158" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="608" height="158" uuid="620cbde2-b2e5-4584-8918-7035dbf4778a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="134" width="95" height="24" uuid="e4a17cb1-e13c-4273-a9c6-59fb86216e6d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admission No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="77" width="608" height="16" uuid="c342558c-267b-436f-acb6-5a743d3a78f5"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="134" width="105" height="24" uuid="afe4e4d7-0998-44d7-804f-83ae9743dcea"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Specialization]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="134" width="80" height="24" uuid="45fd0594-7dba-4e84-9308-d785f20a9134"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="134" width="70" height="24" uuid="ed1f65f0-6f11-4f59-ac5f-58b6579fd83b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="115" width="96" height="19" uuid="f06e8d5f-10cc-4633-8353-0685ca08fac5"/>
+				<box leftPadding="10" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Students :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="115" width="96" height="19" uuid="df178da3-e9ad-4d1d-9126-362eba5ec3e1"/>
+				<box leftPadding="10" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Academic Year : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="134" width="214" height="24" uuid="7dba8971-8a0e-4f67-832a-3a8701c3681b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="134" width="44" height="24" uuid="b1de8ef3-c3c7-4604-be5e-9f4675235b47"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sl No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="115" width="117" height="19" uuid="f4510754-2230-4f4b-898f-97a347e09aa4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{accyear}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="115" width="72" height="19" uuid="a00ac19a-a52b-4f02-b8da-d2a27c780e8f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{strength}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="0" width="237" height="18" uuid="24b6b4d9-baad-4de2-889b-ec6dedb833d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{locationName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="73" height="18" uuid="22955382-6eb7-4865-99d9-3082c1098461"/>
+				<box leftPadding="10" rightPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Affiliation No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="40" height="18" uuid="f8d54637-c916-40f4-bcf2-d97d155973f8"/>
+				<box leftPadding="10" rightPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Email: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="75" height="18" uuid="9aa78be4-f087-46c5-b5af-2aa181926cfd"/>
+				<box leftPadding="10" rightPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[School Code:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="58" width="57" height="18" uuid="19cf211f-503a-4850-b9a6-ba827148cd18"/>
+				<box leftPadding="10" rightPadding="2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Website:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="0" width="140" height="18" uuid="b02ba532-e6ad-41dd-a449-0f3902dd4b49"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolaffilno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="58" width="173" height="19" uuid="75d90348-8b5d-4f69-a4a4-9d0d579c6146"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="58" width="111" height="18" uuid="d6677512-d87a-4ab6-9bb1-c1361c4084a2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolwebsit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="0" width="93" height="18" uuid="5d6f7bff-e2e6-46f9-ae8f-262eda1067f5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolno}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="33" y="18" width="80" height="40" uuid="d62c925a-ee63-49b2-868c-3ef72103985e"/>
+				<imageExpression><![CDATA[$P{custSchoolboardlogo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="488" y="18" width="80" height="40" uuid="50a50aa3-84e2-4793-845b-da20b1c76b0a"/>
+				<imageExpression><![CDATA[$P{custSchoollogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="213" y="18" width="237" height="58" uuid="67871f6e-7bf1-4576-8b9d-abbc914c21d5"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="76" width="608" height="1" uuid="6d1bc0a4-94e7-4284-86fe-252ab9640686"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="93" width="57" height="22" uuid="df178da3-e9ad-4d1d-9126-362eba5ec3e1"/>
+				<box leftPadding="10" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Branch : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="57" y="93" width="404" height="22" uuid="4050ac14-214d-4e6f-bf02-dd29a90c8f96"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{branch}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="93" width="53" height="22" uuid="f06e8d5f-10cc-4633-8353-0685ca08fac5"/>
+				<box leftPadding="10" rightPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="493" y="93" width="115" height="22" uuid="70d1486d-9624-499b-a89e-7febf2caa56e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="24">
+			<textField>
+				<reportElement x="0" y="0" width="44" height="24" uuid="83b3bdff-9553-42fb-bb58-0af7f1d5919a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="95" height="24" uuid="88956a80-4b9b-4422-8f78-c4b5876b7679"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{admissionNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="214" height="24" uuid="28a1dd7a-347b-4c49-8678-7489a4c2d3fb"/>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{studentnamelabel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="0" width="70" height="24" uuid="2c8c6a4e-395b-42d5-ae2b-6347122f9b6e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{classname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="80" height="24" uuid="df738f11-0afe-4ece-b908-d8a80c0ffccb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sectionname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="0" width="105" height="24" uuid="c5de80aa-6c2a-4704-b796-4520a9d6e5d9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{specializationName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Campus Sample" pageWidth="1044" pageHeight="842" columnWidth="1030" leftMargin="7" rightMargin="7" topMargin="7" bottomMargin="7">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="background" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{slno}%2 != 1]]></conditionExpression>
+			<style backcolor="#EDF5F6"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="accYear" class="java.lang.String"/>
+	<parameter name="stream" class="java.lang.String"/>
+	<parameter name="classId" class="java.lang.String"/>
+	<parameter name="section" class="java.lang.String"/>
+	<parameter name="Image" class="java.lang.String"/>
+	<parameter name="schname" class="java.lang.String"/>
+	<parameter name="custSchoolAddres" class="java.lang.String"/>
+	<parameter name="locId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT acc.acadamic_year,CONCAT(st.student_fname_var,' ',st.student_lname_var) AS studentname,
+st.student_admissionno_var,cscd.fms_classstream_id_int,
+cscd.fms_acadamicyear_id_int,cscd.classdetail_id_int,cd.classdetails_name_var,
+cscd.classsection_id_int,sec.classsection_name_var,
+st.student_dob_var,st.student_doj_var,st.student_religion_var,cr.religion,
+st.student_nationality_var,CASE WHEN cscd.student_promotionstatus  IS NULL THEN 'NOTPROMOTED' WHEN cscd.student_promotionstatus='' THEN 'NOTPROMOTED' WHEN cscd.student_promotionstatus='promoted' THEN 'PROMOTED' ELSE cscd.student_promotionstatus END student_promotionstatus,
+st.student_physicallychallenged,st.student_identificationmarks_var,st.student_grade,
+par.FatherName,par.student_mothername_var,par.student_gaurdianname_var,par.Qualification,
+par.mobileno,par.student_mothermobileno_var,par.student_motherqualification_var,cc.caste,
+CASE WHEN (st.student_siblingId='' OR st.student_siblingId IS NULL) THEN '-' ELSE  (SELECT CONCAT(st.student_fname_var,' ',st.student_lname_var) AS studentname
+FROM campus_student WHERE student_id_int=st.student_siblingId) END AS siblingname,
+CASE WHEN (st.student_siblingId='' OR st.student_siblingId IS NULL) THEN '-' ELSE  (SELECT (SELECT classdetails_name_var FROM campus_classdetail WHERE classdetail_id_int=cscd.classdetail_id_int) FROM campus_student s
+WHERE student_id_int=st.student_siblingId) END AS siblingclass, case when st.student_status_var='inactive' then 'InActive' else st.student_status_var end student_status_var,st.student_prehistory_var,st.student_remarks_var,
+par.email,par.student_mother_mailid,par.student_gardian_mailid,
+par.student_gardian_mobileno,st.student_caste,par.ParentID,cpr.relationship,
+st.student_tc_path,
+par.student_father_occupation,par.student_mother_occupation,
+par.address FROM campus_student st JOIN
+campus_student_classdetails cscd ON cscd.student_id_int=st.student_id_int AND cscd.locationId=st.locationId JOIN campus_classstream strm ON strm.classstream_id_int=cscd.fms_classstream_id_int
+JOIN campus_classdetail cd ON cd.classdetail_id_int=cscd.classdetail_id_int AND cd.locationId=cscd.locationId
+JOIN campus_classsection sec ON sec.classsection_id_int=cscd.classsection_id_int AND sec.locationId=cscd.locationId
+JOIN campus_acadamicyear acc ON acc.acadamic_id=cscd.fms_acadamicyear_id_int
+JOIN campus_parentchildrelation cpr
+ON cpr.stu_addmissionNo=st.student_id_int JOIN campus_parents par ON cpr.parentid=par.ParentID
+JOIN campus_religion cr ON cr.religionId=st.student_religion_var JOIN campus_caste cc ON cc.`casteId`=st.student_caste
+ WHERE st.student_status_var ='inactive' AND cscd.fms_acadamicyear_id_int=$P{accYear} AND cscd.`locationId`=$P{locId}
+  AND cscd.classdetail_id_int=$P{classId} AND cscd.classsection_id_int=$P{section}]]>
+	</queryString>
+	<field name="acadamic_year" class="java.lang.String"/>
+	<field name="studentname" class="java.lang.String"/>
+	<field name="student_admissionno_var" class="java.lang.String"/>
+	<field name="fms_classstream_id_int" class="java.lang.String"/>
+	<field name="fms_acadamicyear_id_int" class="java.lang.String"/>
+	<field name="classdetail_id_int" class="java.lang.String"/>
+	<field name="classdetails_name_var" class="java.lang.String"/>
+	<field name="classsection_id_int" class="java.lang.String"/>
+	<field name="classsection_name_var" class="java.lang.String"/>
+	<field name="student_dob_var" class="java.sql.Date"/>
+	<field name="student_doj_var" class="java.sql.Date"/>
+	<field name="student_religion_var" class="java.lang.String"/>
+	<field name="student_nationality_var" class="java.lang.String"/>
+	<field name="student_promotionstatus" class="java.lang.String"/>
+	<field name="student_physicallychallenged" class="java.lang.String"/>
+	<field name="student_identificationmarks_var" class="java.lang.String"/>
+	<field name="FatherName" class="java.lang.String"/>
+	<field name="student_mothername_var" class="java.lang.String"/>
+	<field name="student_gaurdianname_var" class="java.lang.String"/>
+	<field name="Qualification" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="student_mothermobileno_var" class="java.lang.String"/>
+	<field name="student_motherqualification_var" class="java.lang.String"/>
+	<field name="siblingname" class="java.lang.String"/>
+	<field name="siblingclass" class="java.lang.String"/>
+	<field name="student_status_var" class="java.lang.String"/>
+	<field name="student_prehistory_var" class="java.lang.String"/>
+	<field name="student_remarks_var" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="student_mother_mailid" class="java.lang.String"/>
+	<field name="student_gardian_mailid" class="java.lang.String"/>
+	<field name="student_gardian_mobileno" class="java.lang.String"/>
+	<field name="student_caste" class="java.lang.String"/>
+	<field name="ParentID" class="java.lang.String"/>
+	<field name="relationship" class="java.lang.String"/>
+	<field name="student_father_occupation" class="java.lang.String"/>
+	<field name="student_mother_occupation" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="caste" class="java.lang.String"/>
+	<field name="religion" class="java.lang.String"/>
+	<variable name="slno" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{student_admissionno_var}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="1030" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{schname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="24" width="1030" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="51" y="23" width="123" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Academic Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="307" y="23" width="126" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Student Admission No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="23" width="51" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Sl no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="433" y="23" width="115" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="548" y="23" width="87" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="635" y="23" width="93" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="174" y="23" width="133" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Student Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="728" y="23" width="89" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ DOJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="817" y="23" width="103" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Promotion Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="920" y="23" width="110" height="20" forecolor="#F2EDE7" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="1030" height="23" forecolor="#333333" backcolor="#F2F2F2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[All Student Details]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="51" y="0" width="123" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{acadamic_year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="133" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="126" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_admissionno_var}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="115" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classdetails_name_var}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="548" y="0" width="87" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classsection_name_var}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="635" y="0" width="93" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_dob_var}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="817" y="0" width="103" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_promotionstatus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="920" y="0" width="110" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_status_var}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{slno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="728" y="0" width="89" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Segoe UI" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_doj_var}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

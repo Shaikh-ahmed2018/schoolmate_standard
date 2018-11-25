@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RoleDetailsXLSReport" pageWidth="977" pageHeight="842" columnWidth="937" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d6cdae60-29ee-42e7-8213-415e9d787e68">
+	<property name="ireport.zoom" value="0.9313819845887326"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="schname" class="java.lang.String"/>
+	<parameter name="custSchoolAddres" class="java.lang.String"/>
+	<parameter name="locname" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="absent_count" class="java.lang.String">
+		<fieldDescription><![CDATA[absent_count]]></fieldDescription>
+	</field>
+	<field name="addmissionNo" class="java.lang.String">
+		<fieldDescription><![CDATA[addmissionNo]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="classname" class="java.lang.String">
+		<fieldDescription><![CDATA[classname]]></fieldDescription>
+	</field>
+	<field name="count" class="java.lang.Integer">
+		<fieldDescription><![CDATA[count]]></fieldDescription>
+	</field>
+	<field name="createTime" class="java.lang.String">
+		<fieldDescription><![CDATA[createTime]]></fieldDescription>
+	</field>
+	<field name="createdby" class="java.lang.String">
+		<fieldDescription><![CDATA[createdby]]></fieldDescription>
+	</field>
+	<field name="currentyear" class="java.lang.Integer">
+		<fieldDescription><![CDATA[currentyear]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="day" class="java.lang.Integer">
+		<fieldDescription><![CDATA[day]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.String">
+		<fieldDescription><![CDATA[department]]></fieldDescription>
+	</field>
+	<field name="designation" class="java.lang.String">
+		<fieldDescription><![CDATA[designation]]></fieldDescription>
+	</field>
+	<field name="holiday_count" class="java.lang.String">
+		<fieldDescription><![CDATA[holiday_count]]></fieldDescription>
+	</field>
+	<field name="leave_count" class="java.lang.String">
+		<fieldDescription><![CDATA[leave_count]]></fieldDescription>
+	</field>
+	<field name="month" class="java.lang.String">
+		<fieldDescription><![CDATA[month]]></fieldDescription>
+	</field>
+	<field name="month_int" class="java.lang.Integer">
+		<fieldDescription><![CDATA[month_int]]></fieldDescription>
+	</field>
+	<field name="parentid" class="java.lang.String">
+		<fieldDescription><![CDATA[parentid]]></fieldDescription>
+	</field>
+	<field name="period1" class="java.lang.String">
+		<fieldDescription><![CDATA[period1]]></fieldDescription>
+	</field>
+	<field name="period2" class="java.lang.String">
+		<fieldDescription><![CDATA[period2]]></fieldDescription>
+	</field>
+	<field name="period3" class="java.lang.String">
+		<fieldDescription><![CDATA[period3]]></fieldDescription>
+	</field>
+	<field name="period4" class="java.lang.String">
+		<fieldDescription><![CDATA[period4]]></fieldDescription>
+	</field>
+	<field name="period5" class="java.lang.String">
+		<fieldDescription><![CDATA[period5]]></fieldDescription>
+	</field>
+	<field name="period6" class="java.lang.String">
+		<fieldDescription><![CDATA[period6]]></fieldDescription>
+	</field>
+	<field name="period7" class="java.lang.String">
+		<fieldDescription><![CDATA[period7]]></fieldDescription>
+	</field>
+	<field name="period8" class="java.lang.String">
+		<fieldDescription><![CDATA[period8]]></fieldDescription>
+	</field>
+	<field name="present_count" class="java.lang.String">
+		<fieldDescription><![CDATA[present_count]]></fieldDescription>
+	</field>
+	<field name="regid" class="java.lang.String">
+		<fieldDescription><![CDATA[regid]]></fieldDescription>
+	</field>
+	<field name="sectionname" class="java.lang.String">
+		<fieldDescription><![CDATA[sectionname]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[sno]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[status]]></fieldDescription>
+	</field>
+	<field name="studentid" class="java.lang.String">
+		<fieldDescription><![CDATA[studentid]]></fieldDescription>
+	</field>
+	<field name="studentid1" class="java.lang.String">
+		<fieldDescription><![CDATA[studentid1]]></fieldDescription>
+	</field>
+	<field name="studentname" class="java.lang.String">
+		<fieldDescription><![CDATA[studentname]]></fieldDescription>
+	</field>
+	<field name="teacherName" class="java.lang.String">
+		<fieldDescription><![CDATA[teacherName]]></fieldDescription>
+	</field>
+	<field name="tot_count" class="java.lang.String">
+		<fieldDescription><![CDATA[tot_count]]></fieldDescription>
+	</field>
+	<field name="totaldays" class="java.lang.Integer">
+		<fieldDescription><![CDATA[totaldays]]></fieldDescription>
+	</field>
+	<field name="updatedby" class="java.lang.String">
+		<fieldDescription><![CDATA[updatedby]]></fieldDescription>
+	</field>
+	<field name="updatetime" class="java.lang.String">
+		<fieldDescription><![CDATA[updatetime]]></fieldDescription>
+	</field>
+	<field name="weekday" class="java.lang.String">
+		<fieldDescription><![CDATA[weekday]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[year]]></fieldDescription>
+	</field>
+	<field name="classsection" class="java.lang.String"/>
+	<field name="specName" class="java.lang.String"/>
+	<variable name="slno" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{date}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6579c8c3-413f-44f3-a7e0-d34dc2d24447" x="0" y="79" width="937" height="20" forecolor="#333333"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Attendance Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="308799dd-f242-4b7c-b31d-118e46e93a93" x="0" y="18" width="937" height="61"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e13c773-6c09-4aa7-88e2-252d6f875b52" x="0" y="0" width="937" height="18"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{locname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="127348f2-ecc1-4a61-8bb4-91e33a67efc5" mode="Opaque" x="466" y="0" width="117" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Strength]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0027b2d8-7dda-4875-8e79-e06d2d4f1eec" mode="Opaque" x="0" y="0" width="88" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a515b7f4-b7a3-43f5-9ce1-bd82ab9e974c" mode="Opaque" x="88" y="0" width="125" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Attendance Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ec94e41-3a35-47b3-bda2-64871ff95534" mode="Opaque" x="583" y="0" width="119" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Present]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b2762f57-9a64-4885-bf51-db8c514a4c0a" mode="Opaque" x="702" y="0" width="116" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Absent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a06a836-97b6-4971-9947-88c4e788d533" mode="Opaque" x="818" y="0" width="119" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Leave]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e70a7b3-e8b3-4038-a8ec-529e2a7619ee" mode="Opaque" x="213" y="0" width="119" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class & Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="259d9949-40fa-4536-88f8-68ea64d78dd1" mode="Opaque" x="332" y="0" width="134" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Specialization]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement uuid="16e3db91-905a-4666-a570-248db5780695" x="0" y="0" width="88" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{slno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="220bfb4e-81dd-4f20-85a7-80a15ad84ff1" x="88" y="0" width="125" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d9a4023e-1c05-46cd-a6e8-bc3f79d43fc5" x="466" y="0" width="117" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tot_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c4d324a0-d70f-4d15-a771-14d29dfb9a83" x="583" y="0" width="119" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{present_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ba34c249-3552-4e29-9fb4-fd33adb74d48" x="702" y="0" width="116" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{absent_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2412f90f-825f-40cc-ba4d-b38bbf80b943" x="818" y="0" width="119" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{leave_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d6aa771-47f3-4bc5-9dc1-45c5519676a9" x="213" y="0" width="119" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classsection}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ea4a8589-fe27-4516-9d09-f0c811ec729a" x="332" y="0" width="134" height="20" forecolor="#333333"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Segoe UI" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{specName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

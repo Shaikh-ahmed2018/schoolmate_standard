@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudentListRollNoWise" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cce8c3c7-e7e8-49fb-88a3-132ec0f51cd7">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SchoolName" class="java.lang.String"/>
+	<parameter name="SchoolAdd" class="java.lang.String"/>
+	<parameter name="Schname" class="java.lang.String"/>
+	<parameter name="accyear" class="java.lang.String"/>
+	<parameter name="location" class="java.lang.String"/>
+	<parameter name="classname" class="java.lang.String"/>
+	<parameter name="section" class="java.lang.String"/>
+	<parameter name="Reporttype" class="java.lang.String"/>
+	<parameter name="custSchoolAddres" class="java.lang.String"/>
+	<parameter name="custSchoollogo" class="java.lang.String"/>
+	<parameter name="custSchoolboardlogo" class="java.lang.String"/>
+	<parameter name="custSchoolaffilno" class="java.lang.String"/>
+	<parameter name="custSchoolno" class="java.lang.String"/>
+	<parameter name="custSchoolwebsit" class="java.lang.String"/>
+	<parameter name="custSchoolEmail" class="java.lang.String"/>
+	<parameter name="custSchoolAddres1" class="java.lang.String"/>
+	<parameter name="branch" class="java.lang.String"/>
+	<parameter name="status" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="studentRollNo" class="java.lang.String"/>
+	<field name="admissionNo" class="java.lang.String"/>
+	<field name="sno" class="java.lang.Integer"/>
+	<field name="studentnamelabel" class="java.lang.String"/>
+	<field name="classname" class="java.lang.String"/>
+	<field name="sectionId" class="java.lang.String"/>
+	<field name="sectionname" class="java.lang.String"/>
+	<title>
+		<band height="153" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="ae8d0205-c70b-40f5-827e-b688fc2a73fb" x="0" y="0" width="802" height="153"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="7d5d5ff2-4369-40c6-852e-e7fc5b5b44ba" x="-1" y="129" width="94" height="24"/>
+				<box leftPadding="10" rightPadding="3">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Academic Year  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34c21293-281e-4d73-b7d9-bb5b0ec60ab3" x="303" y="129" width="47" height="24"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="594a0979-8b10-4574-8874-12d051b6cac9" x="641" y="129" width="57" height="24"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Division :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f3721f86-b606-43be-9c69-4ecdacaf89c3" x="350" y="129" width="291" height="24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{classname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="947787ed-ad48-4489-a824-b94b1262362e" x="698" y="129" width="105" height="24"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{section}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ede7d958-f563-49c0-a41b-412e3c1a0148" x="93" y="129" width="210" height="24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{accyear}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="63977bd0-23c2-48e8-90ef-5a731ed0d189" x="-1" y="77" width="803" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Reporttype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6a9e3209-28f9-4a90-a193-3202d1f994b2" x="161" y="0" width="484" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3f9fd521-87b2-4805-acf7-63e8779dd68b" x="645" y="0" width="74" height="18"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[School Code:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="38743d6d-ec66-4c6d-9987-1c34ad01d105" x="719" y="0" width="83" height="18"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a0e5fe25-6daa-462b-bb65-42226b2f43e4" x="70" y="0" width="91" height="18"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolaffilno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c75eba89-ed5a-4380-be33-cb4aa6d1eeb3" x="645" y="58" width="53" height="18"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Website:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5610b95e-cd68-4c40-b166-8b91d0fcbb8e" x="0" y="0" width="70" height="18"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Affiliation No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="566e531b-d5e6-48bb-a252-e11200fadb49" x="42" y="58" width="119" height="18"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolEmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c03f21bf-81d5-4839-9ffc-a7c34a0ce3fb" x="0" y="58" width="42" height="18"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Email: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0d147244-4dc7-44e9-aa15-331c7602c41a" x="698" y="58" width="104" height="18"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custSchoolwebsit}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="224b0c59-e129-4db6-af5a-b3f8f463076e" x="36" y="18" width="80" height="40"/>
+				<imageExpression><![CDATA[$P{custSchoolboardlogo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="40122538-18cf-40bd-a6c5-cb78ad9716a6" x="682" y="18" width="80" height="40"/>
+				<imageExpression><![CDATA[$P{custSchoollogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="82afd2a3-9b89-48b5-88f0-bf49f748c2ad" x="161" y="20" width="484" height="56"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="df5e10cf-5f29-490e-b638-2d7b66ef5a00" x="-1" y="76" width="803" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="64ea334f-af3f-4e34-b9ba-1e5d48547446" x="54" y="105" width="587" height="24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{branch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3b3d8af8-60eb-4aca-a35f-c8f947b4fb10" x="698" y="104" width="104" height="25"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7d5d5ff2-4369-40c6-852e-e7fc5b5b44ba" x="0" y="104" width="54" height="25"/>
+				<box leftPadding="10" rightPadding="3">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Branch:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="594a0979-8b10-4574-8874-12d051b6cac9" x="641" y="104" width="57" height="25"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="78a709f3-7fc0-4561-abc5-c8ac9dfbf770" x="0" y="104" width="802" height="1"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="52e9355a-9e9a-4e69-b919-c14a4d138895" x="0" y="0" width="73" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="78a096e9-db9c-4924-918b-ed35ab738f45" x="73" y="0" width="185" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admission No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb91f5f5-77ad-4bc3-8e97-3bb920263f2c" x="361" y="0" width="287" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dff06213-6130-4594-a937-8f2399be835b" x="725" y="0" width="77" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd4d481c-1992-4838-93f9-56a158fbd1b6" x="648" y="0" width="77" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70f73b8a-cfbf-4ac5-b3e4-7fa136563bbf" x="258" y="0" width="103" height="30"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Roll.No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement uuid="49980bc5-6278-4268-89d1-8b4ac339950a" x="0" y="0" width="73" height="26"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8027755b-571f-49bc-8462-9815aa99f9f4" x="73" y="0" width="185" height="26"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admissionNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6c1e4bf-8d6f-451c-bda9-8cf3fa6e3629" x="648" y="0" width="77" height="26"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="19ba92d8-0472-42bf-8609-93c6b5dba569" x="725" y="0" width="77" height="26"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sectionname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e1ccb8b5-4cc4-4a51-a059-9d6649614eda" x="361" y="0" width="287" height="26"/>
+				<box leftPadding="3" rightPadding="3">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentnamelabel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ae4fc8d4-990d-4d6d-83c2-7fed96b22a3e" x="258" y="0" width="103" height="26"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentRollNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

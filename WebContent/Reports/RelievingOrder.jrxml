@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Order" pageWidth="681" pageHeight="684" orientation="Landscape" columnWidth="641" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb9a799d-7fc1-479a-a797-ab7c23291d90">
+	<property name="ireport.zoom" value="1.328670750000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="333"/>
+	<parameter name="currentdate" class="java.lang.String"/>
+	<parameter name="custSchoolAddres" class="java.lang.String"/>
+	<parameter name="locname" class="java.lang.String"/>
+	<parameter name="custSchoollogo" class="java.lang.String"/>
+	<parameter name="custSchoolboardlogo" class="java.lang.String"/>
+	<parameter name="custSchoolaffilno" class="java.lang.String"/>
+	<parameter name="custSchoolno" class="java.lang.String"/>
+	<parameter name="custSchoolwebsit" class="java.lang.String"/>
+	<parameter name="custSchoolEmail" class="java.lang.String"/>
+	<parameter name="custSchoolAddres1" class="java.lang.String"/>
+	<parameter name="branch" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="teachername" class="java.lang.String"/>
+	<field name="designame" class="java.lang.String"/>
+	<field name="locadd" class="java.lang.String"/>
+	<field name="locaname" class="java.lang.String"/>
+	<field name="registrtionno" class="java.lang.String"/>
+	<field name="doj" class="java.lang.String"/>
+	<detail>
+		<band height="608">
+			<rectangle>
+				<reportElement uuid="0d8636ed-1ca5-46bf-8060-85e682c85ff0" x="0" y="0" width="640" height="608"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="9d45a950-26a4-41ee-ad47-86e0cc4ad122" x="42" y="69" width="598" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="aae0a390-0968-47cd-a66c-5e72eb515c41" x="0" y="69" width="42" height="20" forecolor="#000000" backcolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Segoe UI" size="10" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="297c60b3-45f7-4506-ba15-e77c441cc897" x="1" y="144" width="99" height="20" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Dear Mr./Mrs/Ms.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e55d42a3-50e1-495d-95ca-94cf6a31cb6e" x="100" y="144" width="541" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{teachername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3456d47b-1af2-4676-a8ce-d382936c8bb2" x="1" y="184" width="640" height="20" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Your resignation has been accepted and you are relieved of your duties with effect from …..........................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75f6aa4b-a32c-441a-b73a-0af0f186ffe1" x="0" y="164" width="640" height="20" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[We acknowledge receipt of your letter on the subject requesting us to relieve you from the services of the company.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5508b20e-4540-425f-91a3-407609740be8" x="117" y="204" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Employee Id]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5f6cba23-9c56-48a7-aa32-1d2f2b004409" x="264" y="204" width="376" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrtionno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a53f8cc4-9c07-46aa-8409-71e97874df6b" x="269" y="236" width="371" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doj}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ef1f7b3c-619e-495c-bb80-b27f6fd06b62" x="117" y="236" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Joining]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6336043-1691-4dde-91f2-2f215aa5f318" x="117" y="332" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Last Drawn Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8ae813b0-e04d-4e0c-867b-87993c57fc07" x="117" y="364" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[PF Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="99d050ee-04cb-4315-b77d-a45641219c68" x="264" y="268" width="376" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a73d025-a7af-497f-8f09-079376b9d6ee" x="264" y="300" width="376" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{designame}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dcd502ff-5c9d-47c9-8e9f-d3e0d4e6f044" x="117" y="300" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1a0373f-c627-4c16-b987-b96bd572dce0" x="117" y="268" width="148" height="32" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Releiving]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abe78b2a-5be2-4bd0-814f-431b03542d81" x="0" y="426" width="640" height="30" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[We thank you for your contribution to ………………………………………………………….. and wish you all the best in your future endeavours.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f10b768-411d-495d-80f6-34733c990caa" x="0" y="396" width="640" height="30" forecolor="#000000"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Kindly submit any property, including identity card and any other information of the company under your possession to the nominated person and contact our Accounts Department for settlement of your full and final accounts.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d61dc016-144c-43ec-a646-b312be65270b" x="364" y="521" width="257" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[AUTHORISED SIGNATORY]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="64f1d602-a1f3-4c67-8989-2601d1d22aa9" x="400" y="184" width="240" height="20"/>
+				<box leftPadding="33" rightPadding="0"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3c83d724-2d4d-48d9-8360-7a33a11a55d0" x="517" y="54" width="38" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Websit:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8d4ace27-a396-49ad-88a7-bb7560b70c51" x="155" y="0" width="362" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{locname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f98bac2-07af-4a43-92e8-6039c7087379" x="155" y="20" width="362" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="245938b7-8444-4822-96d9-c4cf85144d7d" x="69" y="0" width="86" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolaffilno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="42b1d43d-6193-4f57-b63b-76d1a087da47" x="555" y="54" width="86" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolwebsit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="22e8e62d-2146-41dd-b225-4950b3cae1be" x="517" y="0" width="61" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[School Code:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ff4f61e2-0304-4d11-9f14-8b9433928588" x="42" y="54" width="113" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolEmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fea3a08f-9796-4328-8d4f-ada78fd998c7" x="0" y="0" width="69" height="14"/>
+				<box leftPadding="10"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Affiliation No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="38e004f8-b6cf-467d-8f20-cc0a97631fb9" x="0" y="54" width="42" height="14"/>
+				<box leftPadding="10"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[ Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="abf763c1-0398-4aaa-a5d4-d5596c43e67b" x="578" y="0" width="63" height="14"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="cedb5b89-2b67-42e1-b43b-7bf90eb4981b" x="0" y="68" width="641" height="1"/>
+			</line>
+			<image>
+				<reportElement uuid="7198d86c-ddc6-444d-a574-377d4d1afc76" x="27" y="14" width="63" height="40"/>
+				<imageExpression><![CDATA[$P{custSchoolboardlogo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="ea1e7054-bce1-4bce-a926-bc820754137a" x="544" y="14" width="67" height="40"/>
+				<imageExpression><![CDATA[$P{custSchoollogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="c1f0c27b-32e9-490f-84b8-21e848b45203" x="1" y="109" width="640" height="35"/>
+				<box leftPadding="10"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{custSchoolAddres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aabc2238-279d-483f-b598-2c56cd115b6a" x="1" y="89" width="640" height="20"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{branch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bdd768ff-0ab2-430e-99f7-51eda40a956a" x="176" y="426" width="254" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{locname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,16 @@
+package com.centris.campus.util;
+
+public class LoginSqlUtil {
+	
+	public static final String GET_FATHER_DETAILS = "select p.ParentID,concat(p.FatherName) as parentname,p.Qualification,p.address,p.mobileno,p.UserName,p.email,p.password,u.lastLogin,u.role,u.type,r.RoleName from campus_role r,campus_user u,campus_parents p where p.ParentID=u.employeecode and p.ParentID=?";
+	public static final String GET_STAFF_DETAILS = "select t.TeacherID,concat(t.FirstName,'  ',t.LastName) as teachername,t.qualification,t.presentAddress,t.mobileNo,t.username,t.gender,t.emailId,t.password,u.lastLogin,u.role,u.type,u.usercode,r.RoleName,t.Loc_ID,r.IsDefault,r.role_type,t.dateofJoining from campus_role r,campus_user u,campus_teachers t where t.TeacherID=u.employeecode and u.role=r.RoleCode and t.TeacherID=?";
+	public static final String GET_PERMISSION_DETAILS = "select rpm.shortName,rpm.isApplicable from campus_role_permissions_mapping rpm ,campus_permissions cp where cp.PermissionCode=rpm.permissionCode and rpm.roleCode=?";
+
+	public static final String GET_PARENT_CHAILD_RELATION ="select distinct relationship from campus_parentchildrelation where parentid=?";
+	public static final String GET_MOTHER_DETAILS = "select p.ParentID,concat(p.student_mothername_var) as parentname,p.student_motherqualification_var AS Qualification,p.address,p.student_mothermobileno_var AS mobileno,p.UserName,p.student_mother_mailid AS email,p.password,u.lastLogin,u.role,u.type,r.RoleName from campus_role r,campus_user u,campus_parents p where p.ParentID=u.employeecode and p.ParentID=?";
+	
+	public static final String GET_GUARDIAN_DETAILS = "select p.ParentID,concat(p.student_gaurdianname_var) as parentname,'NO' AS Qualification,p.address,p.student_gardian_mobileno AS mobileno,p.UserName,p.student_gardian_mailid AS email,p.password,u.lastLogin,u.role,u.type,r.RoleName from campus_role r,campus_user u,campus_parents p where p.ParentID=u.employeecode and p.ParentID=?";
+	public static final String GET_CUSTOMER_DETAILS = "SELECT `customerID`, `cust_refno`, CONCAT(`cust_fname`,' ',`cust_lname`)AS customer, `cust_phone_no`, `cust_tel_no`, `cust_email`, `cust_address`, `sub_type`, `sub_start_date`, `cust_uname`, `cust_pwd`, `no_of_users`, `no_of_schools`, `license_key`, `lic_expdate`, `created_date`, `created_by`,user.username,user.password,user.lastLogin,user.role,user.type,user.locationId,r.RoleName,r.role_type,r.IsDefault,user.usercode FROM `campus_customer_details`,campus_role r,campus_user USER WHERE `customerID`= user.employeecode AND user.role=r.RoleCode and `customerID` = ?";
+	public static final String CHECK_VALIDATE = "SELECT COUNT(*),`cust_refno`, CONCAT(`cust_fname`,' ',`cust_lname`)AS cust,`sub_type`, `sub_start_date`,  `cust_uname`, `cust_pwd`, `no_of_users`, `no_of_schools`, `license_key`, `lic_expdate`, `created_date`, `created_by` FROM `campus_customer_details` WHERE CURDATE()<=lic_expdate AND customerID = ?";
+	public static final String GET_USER_DETAILS = "SELECT user.`employeecode`,user.`app_userid`,user.`username`,user.`password`,user.`role`,user.type FROM `campus_user` user WHERE `usercode` = ?";
+}

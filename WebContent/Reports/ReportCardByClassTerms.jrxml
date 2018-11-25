@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportcard" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee3066ae-59aa-43ff-96f4-b43e24382b76">
+	<property name="ireport.zoom" value="1.3636363636364288"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="79"/>
+	<subDataset name="dataset1" uuid="63581620-6002-47c9-8ae3-5b041ff83c31">
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectName" class="java.lang.String"/>
+		<field name="scored_marks" class="java.lang.String"/>
+		<field name="notebook_marks" class="java.lang.String"/>
+		<field name="subject_enrich_marks" class="java.lang.String"/>
+		<field name="periodictest" class="java.lang.String"/>
+		<field name="obtainedmarks" class="java.lang.String"/>
+		<field name="grade" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="schoollogo" class="java.lang.String"/>
+	<parameter name="boardlogo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="accyearname" class="java.lang.String"/>
+	<field name="class_and_section" class="java.lang.String"/>
+	<field name="studentRollNo" class="java.lang.String"/>
+	<field name="studentnamelabel" class="java.lang.String"/>
+	<field name="fatherName" class="java.lang.String"/>
+	<field name="motherName" class="java.lang.String"/>
+	<field name="dob" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="admissionNo" class="java.lang.String"/>
+	<field name="examMarkList" class="java.util.Collection"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="work_edu_grade" class="java.lang.String"/>
+	<field name="art_edu_grade" class="java.lang.String"/>
+	<field name="heath_edu_grade" class="java.lang.String"/>
+	<field name="discipline_grade" class="java.lang.String"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="result" class="java.lang.String"/>
+	<field name="classname" class="java.lang.String"/>
+	<field name="regNo" class="java.lang.String"/>
+	<field name="finalperiodicmark" class="java.lang.String"/>
+	<field name="finalnotebook" class="java.lang.String"/>
+	<field name="finalsubenrichment" class="java.lang.String"/>
+	<field name="finalyearlymark" class="java.lang.String"/>
+	<pageHeader>
+		<band height="100"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="119">
+			<staticText>
+				<reportElement uuid="bcf5072f-ffd2-46c6-9f86-df1b6ed599e0" x="1" y="59" width="132" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Student’s Name		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7fc516b3-cbdd-4625-bd60-bbbc8a01111a" x="1" y="89" width="132" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Mother’s Name		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="554d2c58-594a-4e4f-a1b7-ce9168d053a7" x="1" y="74" width="132" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Father’s Name		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="864ca53c-a902-46dc-aa90-c7feb5c6bf7f" x="133" y="59" width="152" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentnamelabel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f4708ff-2432-4b29-94e4-d896fd909cd8" x="133" y="89" width="152" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6691985b-0c76-488b-bd57-440e0e0b611e" x="133" y="74" width="152" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fatherName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="0c9c0c66-2c32-4e3e-9f41-3c49c6905533" x="0" y="40" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a01d9755-b776-449e-8945-94a935f10758" x="1" y="6" width="284" height="16"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Academic Session: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="98ee56d1-8cf1-4006-8e5e-82996d116552" x="285" y="6" width="269" height="16"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{accyearname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ea0140fe-69eb-482c-b174-69176fd7c928" x="1" y="22" width="284" height="16"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Card for ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="59b51254-4528-44ba-9514-97a4ea891538" x="285" y="22" width="269" height="16"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8139ae62-dfbd-47c0-9692-c664b144d632" x="390" y="44" width="6" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="806db788-e5dd-47d8-a419-087c9ac36741" x="396" y="44" width="70" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{class_and_section}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7fa89285-7e8c-4f35-a319-987e6e0346ec" x="285" y="44" width="105" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class/Section/Roll No.]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="796d9f5b-0a67-4f5f-a20e-69f95fd45abb" x="468" y="44" width="84" height="73"/>
+				<imageExpression><![CDATA[$P{boardlogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="78f0bdc7-44b3-4341-95fa-b524fce4c58c" x="390" y="59" width="6" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dcee831c-927e-4ded-8c81-017ac20c0201" x="285" y="59" width="105" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e27c4bb2-43e9-458e-84af-5c6ac95e7abd" x="396" y="59" width="70" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4ee1a9bf-ecec-4b3a-b4a9-c31b3bec7bfa" x="133" y="44" width="152" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admissionNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="06fa654c-3c68-480f-8333-6a01e0e70b47" x="1" y="44" width="132" height="14"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Admission No		:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="110">
+			<componentElement>
+				<reportElement uuid="88fe186c-224b-4f16-bb4e-027b24ce8a23" x="0" y="60" width="556" height="18"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="a613d449-2860-41f8-98d4-d83292106fcc">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{examMarkList})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="556">
+						<textField>
+							<reportElement uuid="d9c386d3-5bf9-4d34-98c0-ea15ff9817cb" x="441" y="0" width="63" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{obtainedmarks}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement uuid="a502f4d6-cf5d-4a73-b131-19552c881a90" x="504" y="0" width="50" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement uuid="cf56c683-7599-4f22-a257-df48d529cdb9" x="379" y="0" width="62" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{scored_marks}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement uuid="96bfe8b8-44d6-4d76-9647-9af7dfa10636" x="0" y="0" width="193" height="18"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Justified" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement uuid="c77f00e2-6731-4c91-ad67-153cb029308b" x="313" y="0" width="66" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{subject_enrich_marks}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="false">
+							<reportElement uuid="f2dd2c30-a0ab-43db-a83e-855f04a0d12e" x="193" y="0" width="67" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{periodictest}]]></textFieldExpression>
+						</textField>
+						<textField isBlankWhenNull="true">
+							<reportElement uuid="b266166f-019b-4653-a43f-fc42dcbf4081" x="260" y="0" width="53" height="18"/>
+							<box>
+								<topPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Cambria" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{notebook_marks}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="2340c92f-ba8c-4080-961f-815c99ce7964" x="504" y="20" width="50" height="40"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc9fe375-03ef-40cd-b167-8b027d1810de" x="260" y="20" width="53" height="40"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Note Book]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="97c57e3d-ad57-4595-91d1-9ff2fd984abd" x="193" y="20" width="67" height="40"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodic Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9db30443-261b-4518-995c-c341dd03a24c" x="0" y="20" width="193" height="40"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Subject Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01042a31-66c7-47f0-b9db-65c6d441bb0f" x="193" y="1" width="361" height="19"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Term I (100 Marks)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29270980-f206-4693-bd85-91bc2940676c" x="441" y="20" width="63" height="40"/>
+				<box topPadding="0" bottomPadding="10">
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mark Obtained]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9ce365c6-8879-472f-afeb-7d961b3d10d5" x="313" y="20" width="66" height="40"/>
+				<box bottomPadding="10">
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Enrichment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0695f2fa-49e1-4d72-91ab-d493709df514" x="0" y="1" width="193" height="19"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Scholastic  Areas		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eda71ee7-1045-4fd0-b482-5effa2c14c0c" x="379" y="20" width="62" height="40"/>
+				<box bottomPadding="10">
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Half Yearly Exam ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b266166f-019b-4653-a43f-fc42dcbf4081" x="193" y="46" width="67" height="13"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalperiodicmark}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b266166f-019b-4653-a43f-fc42dcbf4081" x="260" y="46" width="53" height="13"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalnotebook}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b266166f-019b-4653-a43f-fc42dcbf4081" x="313" y="46" width="66" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalsubenrichment}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b266166f-019b-4653-a43f-fc42dcbf4081" x="379" y="46" width="62" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalyearlymark}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="db92f0c5-5ba6-404e-97ab-8367b6e34891" x="442" y="47" width="62" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(100)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="149">
+			<staticText>
+				<reportElement uuid="b8ae9cf6-dddc-4c75-9259-88a58bc8b4f4" x="1" y="1" width="441" height="19"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Co-Scholastic Areas              [on a 3-point (A-C) grading scale]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="35d35d67-b810-4364-acd4-f9e7e8bd23ca" x="442" y="1" width="113" height="19"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grade ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="49a943e8-1480-4f7c-af36-c3e460110513" x="1" y="20" width="441" height="13"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Work Education (or Pre-vocational Education)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b4346fe8-6612-40b4-98a4-6c57434b4c62" x="1" y="33" width="441" height="14"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Art Education]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f897b540-99bd-4129-b885-7622117a98a4" x="1" y="47" width="441" height="13"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Health & Physical Education]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="188bea4b-87cc-4168-b0e6-1d1be9190796" x="442" y="66" width="113" height="12"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grade ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3aec181-a7c9-40d3-9708-c2338f51a539" x="1" y="78" width="441" height="14"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Discipline                                [on a 3-point (A-C) grading scale]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed60d732-96fd-4b3e-a5a1-ce275cb104c7" x="1" y="96" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Class Teacher’s remarks	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3b19d006-50ec-4279-b8fb-83dbd2e78073" x="1" y="112" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Result			:			:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="261c8675-d757-4cba-a70b-37593399f993" x="442" y="20" width="113" height="13"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{work_edu_grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="44de5aad-f938-4e71-8a6f-74012dac0800" x="442" y="33" width="113" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{art_edu_grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4a75e5d0-e9bd-4534-884a-b9653a2f86e6" x="442" y="47" width="113" height="13"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{heath_edu_grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="583fe86e-4e8b-4f89-a135-ad8b1aa5e7cf" x="442" y="78" width="113" height="14"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{discipline_grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="184188d3-7bda-4776-bc20-cba7a98caa18" x="133" y="96" width="421" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8bd00591-7113-4db9-8b91-7b55c9d88d8e" x="133" y="112" width="421" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ba35ae64-64a0-4d0d-bbe5-11729f94309d" x="1" y="66" width="441" height="12"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="179">
+			<staticText>
+				<reportElement uuid="02a0015a-00f3-49e7-9acf-2d703c56de4b" x="1" y="6" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Place:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3147f53-ed81-4ca7-a438-300f2f916916" x="1" y="22" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Date :...............................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2527b407-1b52-4d98-9cd6-ab70c20baa59" x="214" y="6" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Signature of                                                                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="68d815ad-b5a4-42ac-a4a0-5da6d34bcc44" x="214" y="22" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Class Teacher                                                                                                                              ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2f3637d-e0ad-4768-82d5-65715a0b6f08" x="422" y="7" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Signature of                                                                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="991c1ca3-fa9f-4456-ada4-904ebdfe01ee" x="422" y="23" width="132" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Principal                                                                                                                              ]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2603149e-7a40-4785-b532-67c3199be314" x="0" y="39" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="e0b7300a-e146-4361-978a-fe284be0713a" x="1" y="41" width="553" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instructions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="572e1518-2b4b-4de1-ac7a-e12235fdacb9" x="1" y="55" width="553" height="13"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Grading scale for scholastic areas: Grades  are  awarded on  a  8-point grading scale as follows –]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="73597df4-3200-419b-997f-e964b318fd66" x="128" y="69" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARKS RANGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d517fb9-6db6-4355-a2f5-f2c56394c5bb" x="285" y="69" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f5622df0-c65b-4ff8-817b-f94258ed762e" x="285" y="81" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa021fd2-87e2-4aa5-adc9-561113acda60" x="128" y="81" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[91-100]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e40933d7-11c9-44f7-aa77-1283ffce88ec" x="285" y="93" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3ac72aa-bb5c-4d1f-8df2-80ee0a2e47b2" x="128" y="93" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[81-90]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7b250426-c0c1-4cd1-a667-a959af83cad0" x="285" y="105" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[B 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d89b5d1-2345-4222-a45a-5f5eefccddff" x="128" y="105" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[71-80]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="943addb4-5b10-4968-9724-744c49018bde" x="285" y="117" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[B 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c05cbc46-0a86-42c8-a0b9-53b849cf9180" x="128" y="117" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[61-70]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e497cb7c-f9ab-4762-b853-c6824a04a697" x="285" y="129" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="80829e96-09de-4061-affc-74cb7439cdde" x="128" y="129" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[51-60]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="109a82f9-d0f1-43d9-9eb2-27e170a9bbfe" x="285" y="141" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d596a7bf-386b-46ce-bb5a-121669af9ae1" x="128" y="141" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[41-50]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="deb41198-480f-4057-9142-203f017837f4" x="285" y="153" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="38a5b9e1-ceb9-4c24-937a-09be5069758a" x="128" y="153" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[33-40]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b2fb3af7-e360-43a8-a1b1-5a161cf55977" x="285" y="165" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E (Failed)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d9d44aa-e1e0-4208-97f6-9d395cd6c3b7" x="128" y="165" width="157" height="12"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[32 & Below]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

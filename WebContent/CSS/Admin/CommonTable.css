@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+#allstudent th , .allstudent th {
+
+
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+    font-family: Roboto Medium ;
+    font-size: 14px;
+    font-weight: lighter;
+    border-left: 1px solid #ddd;
+    color: #000000 !important;
+    text-align : center;
+}
+#allstudents th{
+	
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+    font-family: Roboto Medium;
+    font-size: 14px;
+    font-weight: lighter;
+    border-left: 1px solid #ddd;
+    color: #000000 !important;
+    text-align : center;
+    
+    
+}
+

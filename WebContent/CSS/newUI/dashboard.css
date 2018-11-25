@@ -1,0 +1,570 @@
+.boxdiv {
+    padding-top: 21px;
+    top: -12px;
+}
+.smsp{
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.col-md-2.smsdiv {
+  width: 77px;
+    height: 42px;
+}
+
+
+
+.blockdiv {
+  	height: 58px;
+    width: 68px;
+    border-radius: 16px;
+    line-height: 13px;
+    margin-left: -10px;
+    /* color: black; */
+   /*  box-shadow: 10px 10px 8px #4d3a1f4d; */
+    border: 1px solid #DEDEDE;
+}
+    
+.dashboard{
+	width: 98%;
+	padding: 5px;
+}
+
+.dashboard-content{
+	padding: 0px;
+/*     //box-shadow: 3px 2px 10px #95a5a7;  */ /* outside of box shadow */
+    box-shadow: 1px 1px 3px 3px #d8d7e0; /* inside of box shadow */
+    margin: 10px 0px;
+    height:245px;
+    border: 1px solid #e1eff1;
+    overflow: hidden;
+    
+}
+
+
+
+
+ .dashboard-content h3{
+	margin: 0px;
+    padding: 10px 5px;
+    background: #27bad2;
+    color: #666363;
+    font-weight: bold;
+    font-family: inherit;
+    text-align: center;
+    font-size: 16px !important;
+    font-weight: 900;
+    box-shadow: inset -17px -12px 0px 19px #dedede;
+    /*border: 3px solid #eee3e3;*/
+} 
+
+
+
+
+ .dashboard-content h4 {
+ 	    color: #000;
+    height: 5px;
+    line-height: 6px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    font-family: Roboto Medium;
+}
+
+
+.subtable-header{
+    color: #070707;
+    font-weight: 600;
+    height: 22px;
+    line-height: 22px;
+    text-align: left;
+    background-color: #dcdfdf82;
+}
+.dashboard-content pre{
+	padding: 0px;
+    margin-bottom: 0px;
+    color: #fff;
+    background: #3da936;
+    font-size: 10px;
+     border:0; 
+     border-radius: 0;
+}
+
+
+
+
+.dashboard .totalSrength{     
+	padding: 45px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #4f939a;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    word-wrap: break-word;
+    bottom: 0;
+    top: 0;
+    color: white;
+    font-size: 16px;
+}
+.content-row {
+    border-bottom: 1px solid #dedede5e;
+    font-family: Roboto,sans-serif;
+}
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.smstable th:nth-child(1){
+    text-align: center !important;
+    width: 90px !important;
+}
+ .smstable td:nth-child(1){
+    text-align: center !important;
+    width: 90px !important;
+}   
+
+.scrollist{
+    overflow: scroll ;
+    height: 90% ;
+}
+.smstable{
+width: 100%;
+text-align: center !important;
+}
+
+.smstable th:nth-child(1){
+	background-color:#3195c5 !important;
+	color:white ! important;
+}
+
+.smstable th:nth-child(2){
+	background-color:#59b97b !important;
+	color:white ! important;
+}
+.smstable th:nth-child(3){
+	background-color:#c5c728 !important;
+	color:white ! important;
+}
+.smstable th:nth-child(4){
+	background-color:#da6d10 !important;
+	color:white ! important;
+}
+
+.smstable th:nth-child(5){
+	background-color:#ce0a0a !important;
+	color:white ! important;
+}
+
+.smstable th:nth-child(n){
+    font-size:11px !important;
+}
+
+.smstable  tr td:nth-child(5)
+ {
+  background: #ce0a0a;
+   color: white!important;
+}
+
+.smstable  tr td:nth-child(4)
+{
+  background: #da6d10;
+   color: white!important;
+}
+
+.smstable  tr td:nth-child(3)
+ {
+  background: #c5c728;
+   color: white!important;
+}
+.smstable  tr td:nth-child(2)
+ {
+   background: #59b97b;
+   color: white!important;
+}
+.smstable  tr td:nth-child(1)
+ {
+    background: #3195c5;
+    color: white!important;
+}
+
+.vehicle th td:nth-child(1){
+	 width: 33% ;
+	 background: #3195c5 !important;
+}
+
+.smstable td{
+	font-size:10px !important;
+}
+
+.smstable th{
+	font-size:10px !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height:10px
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+.points_table_scrollbar::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+        border-radius: 10px;
+        background-color: #f1f1f1;
+}
+
+.points_table_scrollbar::-webkit-scrollbar{
+        width: 1%;
+        min-width: 5px;
+        background-color:#f1f1f1;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: #20cada;
+        background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 30%, transparent, transparent)
+}
+.tableu{
+	
+	border-spacing: 0;
+    border-collapse: collapse;
+        display: table;
+	
+}
+.holidayp{
+	
+    text-align: center;
+    font-size: 9px;
+}
+
+.holidayBox {
+    height: 85px;
+    width: 95px;
+    border-radius: 15%;
+    box-shadow: 8px -2px 6px 2px #b0b5aab8;
+    padding: 0;
+}
+
+ 
+
+p.holidayp {
+    font-size: 10px;
+    margin: 9px;
+    font-family: cursive;
+    font-weight: 600;
+    position: static;
+    padding-top: 3px;
+}
+
+p.holidayName {
+    font-size: 11px;
+    margin: auto;
+    font-family: cursive;
+    font-weight: 600;
+    position: static;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+
+.row.holidayUl {
+    margin-top: 7px;
+    margin-left: -13px;
+}
+
+img.school-details {
+    width: 155px;
+    /* opacity: 0.5; */
+    position: absolute;
+    padding-top: 10px;
+    height: 110px;
+}
+.school-info {
+    color: #090909;
+    font-size: 13px;
+    font-weight: bolder;
+    line-height: 20px;
+    list-style: none;
+    position: absolute;
+    padding-right: 7px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.dynamic-circle {
+    border: 2px solid #666666;
+    border-radius: 50%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    
+    -webkit-box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+    box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+    width: 130px;
+    height: 130px;
+    width: 1;
+    margin: 10px;
+    -webkit-transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out;
+    -ms-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+}
+
+
+
+.control-label.student {
+    width: 100px;
+    margin-left: 11px;
+    text-align: center;
+    color: #897370;
+        box-shadow: 3px 2px 4px 5px #c3c3c347;
+    radious: 10px;
+    border-radius: 2px;
+    top: 23px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.dynamic-circle.teacher {
+    position: relative;
+    top: 17px;
+} 
+.dynamic-circle.student {
+    margin-left: -4px;
+    box-shadow: 5px 1px 10px #b67c87;
+    position: relative;
+    top: 17px;
+}
+.dynamic-circle.others {
+    margin-left: -10px;
+    box-shadow: 5px 1px 10px #b67c87;
+    position: relative;
+    top: 17px;
+}
+       
+span.badge {
+    position: relative !important;
+    top: 42px;
+    right: -43px;
+    border-radius: 30px !important;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+ /*    background-color: green; */
+}
+  .zoom {
+   /*  background-color: green; */
+  /*   transition: transform .2s; */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    -ms-transform: scale(2.9); /* IE 9 */
+    -webkit-transform: scale(2.9); /* Safari 3-8 */
+    transform: scale(2.9); 
+}  
+    
+    
+.headerdashboardBox{
+	
+	
+    height: 35px;
+    margin-top: auto;
+    text-align: center;
+    margin-bottom: auto;
+    padding-top: 10px;
+	
+}    
+   
+.smsDivBox{
+	
+	    background-color: coral;
+	
+}   
+    
+    
+    
+    
+    
+    
+
+/* exam dashboard + Fee by veda*/  
+table.allstudent.exmtable,table.allstudent {
+    position: relative;
+    top: -8px;
+}  
+ table.allstudent.grade {
+    position: relative;
+    top: -6px;
+}   
+.exmtable th{
+font-size: 12px;
+}
+.exmtable td{
+font-size: 12px;
+}
+.grade tbody tr th{
+font-size: 13px;
+}
+.grade tbody tr td{
+font-size: 12px;
+}
+
+.dashboard-content{
+height:250px;
+}
+
+div#dual_x_div {
+    position: relative;
+    top: 30px;
+    left: 20px;
+}
+div#dual_students {
+    position: relative;
+    left: 20px;
+    top: 30px;
+}
+div#chart_div {
+    position: relative;
+    top: 8px;
+   left: 21px;
+    }
+canvas.canvasjs-chart-canvas {
+    height: 270px !important;
+    width: 475px !important;
+}
+
+#TransportCateg{
+    position: relative;
+     top: -13px;
+}
+div#myChart-top {
+    position: relative;
+    top: 0px;
+    left: 10px;
+    text-align: center;
+}
+text {
+    font-size: 13px;
+}
+div#columnchart_values_today {	
+    top: 10px;
+    position: relative;
+}
+div#libraryReports {
+    position: relative;
+    top: -17px;
+    top: -43px;
+    left: -34px;
+}
+div#todayTransactions {
+    position: relative;
+    top: 10px;
+}
+p.sub-details {
+    position: relative;
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 51px;
+    top: 5px;
+}
+.sub-details-container {
+    position: relative;
+    top: -15px;
+}
+#chartContainer canvas.canvasjs-chart-canvas {
+     left: 0;
+    right: 0;
+    margin: auto;
+    top:90px;
+}
+a.canvasjs-chart-credit {
+    display: none;
+}
+h2.dashboard-else {
+    font-size: 16px;
+    text-align: center;
+    top: 91px;
+    position: relative;
+}
+div#myChart-license-text,div#FeeCollection-license-text {
+    display: none;
+}
+div#myChart {
+    position: relative;
+    top: -11px;
+}
+div#SMSreport {
+    position: relative;
+    top: -45px;
+    left: -63px;
+}
+.row-data {
+    text-align: left;
+}
+.pl0{
+	padding-left: 0;
+}
+.dsms32 {
+    padding-left: 34px;
+}
+.dsms33{
+ padding-left: 38px;
+}
+.dsms34{
+padding-left: 36px;
+}
+.dsms35{
+	padding-left:41px;
+}
+.dtrns32 {
+    padding-left: 10px;
+}
+.dtrns33 {
+    padding-left: 19px;
+}
+.dtrns43 {
+    padding-left: 21px;
+}
+
+#FeeCollection {
+    height: 88%;
+    width: 50%;
+    overflow: hidden;
+    position: left;
+    position: relative;
+    left: 302px;
+    top: 24px;
+}
+
+}

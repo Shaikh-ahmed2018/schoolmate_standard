@@ -1,0 +1,68 @@
+.c{
+  font-family: Helvetica Neue, Arial, sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 800px;
+  /*margin: 50px auto;*/
+}
+
+canvas#student {
+    height: 400px !important;
+    width: 400px !important;
+    margin-left: 38%;
+    margin-top: 45px;
+}
+
+
+
+.h1 {
+  font-weight: 200;
+  font-size: 3em;
+  margin: 0 0 0.1em 0;
+}
+
+.h2 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin: 0 0 50px;
+  color: #999;
+}
+
+.a {
+  margin-top: 50px;
+  display: block;
+  color: #3e95cd;
+}
+.dashboard {
+    width: 98%;
+    padding: 10px;
+}
+
+canvas#myChart4 {width: 445px !important;
+    height: 210px !important;
+    /* margin-left: 90px; */
+}
+.dasboardBox {
+    padding: 10px;
+    box-shadow: 1px 1px 3px 3px #d8d7e0;
+    min-height: 280px;
+}
+.dashboardRow{
+	        
+}
+
+
+canvas#myChart3 {
+    height: 212px !important;
+}
+
+canvas#myChart {
+ height: 250px !important;
+    margin-left: 130px;
+}
+canvas#myChart2 {
+ height: 222px !important;
+}
+

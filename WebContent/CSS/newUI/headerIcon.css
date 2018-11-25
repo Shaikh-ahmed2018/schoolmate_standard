@@ -1,0 +1,100 @@
+.headerLogout{
+	font-family: Roboto;
+	color: white;
+	font-size: 13px;
+}
+
+.headerLogoutBlock{
+	
+       font-size:15px;
+       font-weight:100;
+       display:inline-block;
+       /* color: white; */
+}
+
+.headerLogoutBlockSpan{
+	
+	font-size: 15px;
+	font-family: inherit;
+	/* color:white; */
+	display:inline-block;
+}
+
+.headerLogoutIcon,.headerSettingIcon{
+     font-size: 22px;
+     cursor: pointer;
+    
+}
+
+.admissionIcon{
+	height: 34px;
+	width: 33px;
+	margin-top: -7px;
+}
+
+.studentIcon{
+	style="height: 35px;
+	width: 34px;
+	margin-top: -7px;
+}
+
+.examIcon{
+	height: 27px;
+	width: 28px;
+	margin-top: -4px;
+}
+
+.leaveIcon{
+    height: 24px;
+    width: 28px;
+    margin-top:-3px;
+}
+
+.reportIcon{
+	height: 30px;
+	width: 28px;
+	margin-top: -4px;
+}
+
+.txtright{
+	text-align: right;
+}
+.txtleft{
+	text-align: left;
+}
+
+
+.examMenuIcon {
+	
+	height: 20px;
+    padding-right: 55px;
+}
+
+.leaveMenuIcon {
+	
+	height: 20px;
+    padding-right: 53px;
+}
+
+.studentMenuIcon {
+	height: 25px;
+    margin-top: -8px;
+    padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,270 @@
+$(document).ready(function(){
+	
+	
+	$("#locationname").val($("#hiddenlocId").val());
+	
+	
+	
+	$("#searchvalue").keypress(function(e){
+		if(e.keyCode==13){
+		searchList();
+		}
+		
+	});
+	var hacademicyear=$('#hiddenAcademicYear').val();
+	$("#Acyearid option[value="+hacademicyear+"]").attr('selected', 'true');
+	$("#allstudent tbody tr").click(function(){
+		var student_Id = $( this ).find(".studentid").attr("class").split(" ");
+		window.location.href="menuslist.html?method=individualMisreport&studentId="+student_Id[0]+
+		"&accyear="+student_Id[1]+"&locationId="+student_Id[2]+"&classname="+$("#classname").val()
+		+"&sectionid="+$("#sectionid").val()+"&searchvalue="+$("#searchvalue").val()+"&status="+$("#status").val();
+	});
+	
+	$("#resetbtn").on("click", function (e) {
+		$("#locationname,#classname,#sectionid").val("all");
+		$("#Acyearid").val($('#hacademicyaer').val());
+		$("#searchvalue").val("");
+		$("#status").val("active");
+		searchList();
+	});
+	
+	$("#search").click(function(){
+		searchList();
+	});	
+	$("#Acyearid").change(function(){
+		$("#searchvalue").val("");
+		searchList();
+	});
+	getClassList();
+	$("#locationname").change(function(){
+		$("#searchvalue").val("");
+		getClassList();
+		$('#sectionid').html("");
+		$('#sectionid').append('<option value="all">ALL</option>');
+		searchList();
+	});
+	searchList();
+	$("#classname").change(function(){
+		$("#searchvalue").val("");
+		var locationid=$("#locationname").val();
+		var accyear=$("#Acyearid").val();
+		var classname=$("#classname").val();
+		
+		if($(this).val().toLowerCase() == "all"){
+			$('#sectionid').html("");
+			$('#sectionid').append('<option value="all">ALL</option>');
+		}
+		else{
+			getSectionList(classname);
+		}
+		searchList();
+	});
+	
+	$("#sectionid").change(function(){
+		$("#searchvalue").val("");
+		searchList();
+	});
+	
+	$("#status").change(function(){
+		searchList();
+	});
+	
+	
+	$("#heading1").click(function(){
+		$("#MIScollapseOne").toggleClass("in");
+	});
+	
+	if($("#historyaccYear").val()!="" || $("#historylocId").val()!="" || $("#historysearchvalue").val()!="" 
+		|| $("#historystatus").val()=="N"){
+		
+		$("#Acyearid").val($("#historyaccYear").val());
+		$("#locationname").val($("#historylocId").val());
+		getClassList();
+		$("#classname").val($("#historyclassname").val());
+		getSectionList($("#classname").val());
+		$("#sectionid").val($("#historysectionid").val());
+		$("#searchvalue").val($("#historysearchvalue").val());
+		$("#status").val($("#historystatus").val());
+		searchList();
+	}
+	$("#location").val($("#hiddenlocId").val());
+});
+
+function changeAccYear(data){
+	
+	$.ajax({
+		type : 'POST',
+		url : "studentRegistration.html?method=searchAllAcademicYearDetails",
+		data : data,
+		beforeSend: function(){
+			$("#loder").show();
+		},
+		success : function(response) {
+			 
+			var result = $.parseJSON(response);
+				$("#allstudent tbody").empty();
+				if(result.SearchList.length>0){
+				for(var i=0;i<result.SearchList.length;i++){
+				$("#allstudent tbody").append("<tr>"
+						+"<td class='"+result.SearchList[i].studentId+" "+result.SearchList[i].academicYearId+" "+result.SearchList[i].locationId+" "+"studentid"+"'>"+(i+1)+"</td>" 
+						+"<td> "+result.SearchList[i].studentAdmissionNo+" </td>"
+						+"<td> "+result.SearchList[i].studentFullName+"</td>"
+						+"<td> "+result.SearchList[i].studentrollno+" </td>"
+						+"<td> "+result.SearchList[i].classname+" </td>"
+						+"<td> "+result.SearchList[i].sectionnaem+" </td>"
+						+"</tr>");
+				}
+				}
+				else{
+					$("#allstudent tbody").append("<tr><td ColSpan='6'>No Records Found</td></tr>");
+				}
+				$("#loder").hide();
+				pagination(100);
+				$(".numberOfItem").empty();
+				$(".numberOfItem").append("No. of Records  "+result.SearchList.length);
+				$("#allstudent tbody tr").click(function(){
+					var student_Id = $( this ).find(".studentid").attr("class").split(" ");
+					
+					window.location.href="menuslist.html?method=individualMisreport&studentId="+student_Id[0]+"&accyear="+student_Id[1]+
+					"&locationId="+student_Id[2]+"&classname="+$("#classname").val()
+					+"&sectionid="+$("#sectionid").val()+"&searchvalue="+$("#searchvalue").val()+"&status="+$("#status").val();
+				
+				});
+			
+		}
+	});
+}
+function getClassList(){
+	var locationid=$("#locationname").val();
+	
+	datalist={
+			"locationid" : locationid
+	},
+
+	$.ajax({
+		type : 'POST',
+		url : "studentRegistration.html?method=getClassByLocation",
+		data : datalist,
+		async : false,
+		success : function(response) {
+
+			var result = $.parseJSON(response);
+
+			$('#classname').html("");
+			$('#classname').append('<option value="all">ALL</option>');
+		
+			for ( var j = 0; j < result.ClassList.length; j++) {
+
+				$('#classname').append('<option value="'
+
+						+ result.ClassList[j].classcode + '">'
+
+						+ result.ClassList[j].classname
+
+						+ '</option>');
+			}
+		}
+	});
+}
+
+function getSectionList(classname){
+	datalist={
+			"classidVal" : classname,
+			"locationId":$('#locationname').val()
+	},
+	
+	$.ajax({
+		
+		type : 'POST',
+		url : "studentRegistration.html?method=getClassSection",
+		data : datalist,
+		async : false,
+		success : function(response) {
+			
+			var result = $.parseJSON(response);
+			
+			$('#sectionid').html("");
+			
+			$('#sectionid').append('<option value="all">' + "ALL"	+ '</option>');
+			
+			for ( var j = 0; j < result.sectionList.length; j++) {
+
+				$('#sectionid').append('<option value="' + result.sectionList[j].sectioncode
+						+ '">' + result.sectionList[j].sectionnaem
+						+ '</option>');
+			}
+		}
+	});
+}
+function searchList(){
+
+	var searchname = $("#searchvalue").val().trim();
+	
+	var locationid=$("#locationname").val();
+	var accyear=$("#Acyearid").val();
+	var classname=$("#classname").val();
+	var sectionid=$("#sectionid").val();
+	var status=$("#status").val();
+	
+		datalist = {
+			"location" :locationid,
+			"accyear" :accyear,
+			"classId" :classname,
+			"sectionid" :sectionid,
+			"searchname" :searchname,
+			"status":status
+		},
+		$.ajax({
+			type : 'POST',
+			url : "studentRegistration.html?method=getStudentSearchByList",
+			data : datalist,
+			beforeSend: function(){
+				$("#loder").show();
+			},
+			
+			success : function(response) {
+				 
+				var result = $.parseJSON(response);
+					$("#allstudent tbody").empty();
+					if(result.SearchList.length>0){
+					for(var i=0;i<result.SearchList.length;i++){
+					$("#allstudent tbody").append("<tr>"
+							+"<td class='"+result.SearchList[i].studentId+" "+result.SearchList[i].academicYearId+" "+result.SearchList[i].locationId+" "+"studentid"+"'>"+result.SearchList[i].sno+"</td>" 
+							+"<td> "+result.SearchList[i].studentAdmissionNo+" </td>"
+							+"<td> "+result.SearchList[i].studentFullName+"</td>"
+							+"<td> "+result.SearchList[i].studentrollno+" </td>"
+							+"<td> "+result.SearchList[i].classname+" </td>"
+							+"<td> "+result.SearchList[i].sectionnaem+" </td>"
+							+"</tr>");
+					}
+					}
+					else{
+						$("#allstudent tbody").append("<tr><td ColSpan='6'>No Records Found</td></tr>");
+					}
+					$("#loder").hide();
+					pagination(100);
+					$(".numberOfItem").empty();
+					$(".numberOfItem").append("No. of Records  "+result.SearchList.length);
+					$("#allstudent tbody tr").click(function(){
+						var student_Id = $( this ).find(".studentid").attr("class").split(" ");
+						
+						window.location.href="menuslist.html?method=individualMisreport&studentId="+student_Id[0]+"&accyear="+student_Id[1]+
+						"&locationId="+student_Id[2]+"&classname="+$("#classname").val()
+						+"&sectionid="+$("#sectionid").val()+"&searchvalue="+$("#searchvalue").val()+"&status="+$("#status").val();
+					});
+			}
+		});
+}
+
+function commonOperations(){
+	data = {
+		"locationId" :$("#locationname").val(),
+		"accyear" :$("#Acyearid").val(),
+		"classid" :$("#classname").val(),
+		"sectionid" :$("#sectionid").val(),
+		"status" :$("#status").val()
+	},
+	changeAccYear(data);
+}
+
+

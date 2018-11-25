@@ -1,0 +1,208 @@
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@taglib prefix="display" uri="http://displaytag.sf.net"%>
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+<script type="text/javascript" src="JS/backOffice/Fee/concession.js"></script>
+ 
+
+
+
+</head>
+
+<body class="feeconcession">
+<div id="loder" style="display: none; position:absolute; height: 800px;width: 800px;left: 0;right: 0;top: -40px;;bottom: 0;margin: auto;z-index: 99999; "><img style="width: 165px;position: absolute;left: 0;right: 0;height: 165px;bottom: 0;top: -190px;margin: auto;" src="./images/ajax-loading.gif"/></div>
+	
+	<div class="content" id="div1">
+	<div id="dialog"></div>
+		<div class="col-md-12 input-group" id="div2">
+			<p>
+				<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
+					id="pageHeading">Concession details</span>
+			</p>
+		</div>
+		<input type="hidden" id="feeconcessionsearchid"
+			value='<logic:present name="concessiondetailsearch"><bean:write name="concessiondetailsearch"  /></logic:present>'></input>
+
+		<logic:present name="successmessagediv" scope="request">
+			<div class="successmessagediv" align="center">
+				<div class="message-item">
+					<!-- Warning -->
+					<a href="#" class="msg-success bg-msg-succes"><span><bean:write
+								name="successmessagediv" scope="request" /></span></a>
+				</div>
+			</div>
+		</logic:present>
+
+		<div class="successmessagediv" align="center" style="display: none;">
+			<div class="message-item">
+				<!-- Warning -->
+				<a href="#" class="msg-success bg-msg-succes"><span
+					class="validateTips"></span></a>
+			</div>
+		</div>
+
+
+		<div class="errormessagediv" align="center" style="display: none;">
+			<div class="message-item">
+				<a href="#" class="msg-warning bg-msg-warning"><span
+					class="validateTips"></span></a>
+			</div>
+		</div>
+
+
+		<div class="errormessagediv1" style="display: none;">
+			<div class="message-item1"></div>
+		</div>
+
+		<div class="panel panel-primary">
+			<div class="panel-heading clearfix">
+				<a data-toggle="collapse" data-parent="#accordion2"
+					href="#collapseOne" style="color: #fff;"><h3
+						class="panel-title" style="color: #000000;">
+						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Concession details
+					</h3></a>
+				<div class="navbar-right">
+
+
+					<a href="menuslist.html?method=addfeeconcession"><span class="buttons">New</span></a> 
+					<span id="editfee" class="buttons">Modify</span>
+
+					<span id="inactive" style="margin-right:5px;" class="buttons">InActive</span>
+
+					<!-- <span class="buttons" id="iconsimg" data-toggle="modal" data-target="#myModal">Download </span> -->
+
+				</div>
+
+			</div>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h3 class="modal-title" id="myModalLabel">Download</h3>
+						</div>
+						<div class="modal-body">
+							<span id="excelDownload"><img src="images/xl.png"
+								class="xl"></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+								id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <script>
+				$(document).ready(function() {
+					$('[data-toggle="tooltip"]').tooltip();
+				});
+			</script> -->
+
+	 <input type="hidden" id="hidstatus" name="hidstatus" />
+	
+
+    <input type="hidden" id="currentstatus" name="currentstatus" 
+    value="<logic:present name="currentstatus" scope="request"><bean:write name="currentstatus"/></logic:present>" />
+
+     <input type="hidden" id="hiddenlocId"  
+     value='<logic:present name="historylocId" scope="request"><bean:write name="historylocId"/></logic:present>'></input>
+
+	<input type="hidden" id="hiddensearchvalue"  
+		 value='<logic:present name="historysearchvalue" scope="request"><bean:write name="historysearchvalue"/></logic:present>'></input>
+	
+	<input type="hidden" id="hiddenstatus"  
+		 value='<logic:present name="historystatus" scope="request"><bean:write name="historystatus"/></logic:present>'></input>
+
+			<div id="collapseOne" class="accordion-body collapse in">
+				<div class="col-md-6" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-top: 20px;">
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="control-label col-xs-5" style="text-align: right; line-height: 35px;">Branch</label>
+						<div class="col-xs-7">
+							<select id="locationname" name="locationnid" class="form-control" required>
+								  <logic:present name="locationList">
+									<logic:iterate id="Location" name="locationList">
+										<option
+											value="<bean:write name="Location" property="locationId"/>"><bean:write
+												name="Location" property="locationName" /></option>
+									</logic:iterate>
+								 </logic:present>
+						    </select>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+					<label for="inputPassword" class="control-label col-xs-5" style="text-align: right; line-height: 35px;">Search</label>
+						<div class="col-xs-7">
+						<input type="text" class="form-control" id="searchvalue"
+							autocomplete="off" Placeholder="Search......"> 
+							</div>
+							<!-- <span
+							class="input-group-btn">
+							<button class="btn btn-default" type="button" id="search">
+								<i class="fa fa-search"></i>
+							</button>
+						</span> -->
+					</div>
+					<div class="form-group clearfix"> 
+						<div class="col-xs-5">
+							</div>
+						<div class="col-xs-7" style="text-align: left;">
+								<span class="buttons" id="search" style="font-weight: normal;">Search</span>  
+								<span class="buttons" id="resetbtn" style="font-weight: normal;">Reset</span>
+						</div></div>
+				</div>
+				<div class="col-md-6" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-top: 20px;">
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="control-label col-xs-5" style="text-align: right; line-height: 35px;">Status</label>
+						<div class="col-xs-7">
+							<select id="status" name="status" class="form-control">
+								<option value="Y">Active</option>
+								<option value="N">InActive</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-body" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000;">
+							<table class="table" id="allstudent">
+								<thead>
+									<tr>
+										<th><input type='checkbox' name='selectall' id='selectall' style='text-align: center' onClick='selectAll()' /></th>
+										<th>Branch</th>
+										<th>Concession Name</th>
+										<th>Description</th>
+										<th>Remarks</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+
+							</table>
+							<div class='pagebanner'>
+								<select id='show_per_page'><option value='50'>50</option>
+									<option value='100'>100</option>
+									<option value='200'>200</option>
+									<option value='300'>300</option>
+									<option value='400'>400</option>
+									<option value='500'>500</option></select> <span class='numberOfItem'></span>
+							</div>
+							<div class='pagination pagelinks' style="margin-bottom: 10px"></div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script src="JS/newUI/bootstrap.min.js"></script>
+	<script>
+		$('.carousel').carousel({
+			interval : 5000
+		//changes the speed
+		});
+	</script> -->
+</body>
+</html>
