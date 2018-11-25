@@ -47,7 +47,7 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Campus Pro</title>
+<title>Schoolmate</title>
 
 
 
