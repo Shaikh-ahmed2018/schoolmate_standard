@@ -211,6 +211,8 @@ function gotoLogout() {
 
 function changePassword() {
  
+	
+	
 	var oldPassword = $("#oldpassword").val();
 	var newPassword = $("#newPassword").val();
 	var confirmPassword = $("#confirmPassword").val();
