@@ -50,9 +50,6 @@
 <title>Schoolmate</title>
 
 
-
-
-
 <link href="CSS/newUI/modern-business.css" rel="stylesheet">
 <link href="CSS/newUI/custome.css" rel="stylesheet">
 <link href="CSS/newUI/font-awesome/css/font-awesome.min.css"
