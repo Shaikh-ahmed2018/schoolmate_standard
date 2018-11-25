@@ -205,26 +205,6 @@ function  checkuser(username,password,domainname){
 		return flag;
 }
 
-function gotoRespectiveLogin() {
-	
-	$(window.location).attr('href', 'login.html?method=login');
-
-	/*var login_type = $("#usertypehidden").val().trim();
-
-	if (login_type == 'Admin') {
-		$(window.location).attr('href', 'login.html?method=login');
-	}
-	if (login_type == 'Teacher') {
-		$(window.location).attr('href', 'login.html?method=teacherLogin');
-	}
-	if (login_type == 'Parent') {
-		$(window.location).attr('href', 'login.html?method=parentLogin');
-	}
-	if (login_type == 'Principle') {
-		$(window.location).attr('href', 'login.html?method=principleLogin');
-	}*/
-}
-
 function gotoLogout() {
 	$(window.location).attr('href', 'login.html?method=logout');
 }
