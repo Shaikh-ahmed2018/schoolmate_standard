@@ -339,11 +339,7 @@ public class LocationDetailsAction extends DispatchAction{
 		logger.info(JDate.getTimeString(new Date())
 				+ " Control in LocationDetailsAction : editSchool Starting");
 		try {
-			request.setAttribute(MessageConstants.MODULE_NAME,MessageConstants.BACKOFFICE_SETTINGS);
-			request.setAttribute(MessageConstants.HIGHLIGHT_NAME,MessageConstants.MODULE_SETTINGS);
 			
-			request.setAttribute(LeftMenusHighlightMessageConstant.SUBMODULE_HIGHLIGHT_NAME,
-					LeftMenusHighlightMessageConstant.MODULE_SETTINGS_LOCATION);
 			UserLoggingsPojo pojo = (UserLoggingsPojo ) request.getSession(false).getAttribute("token_information");
 			
 			String title = "Modify School";
@@ -352,9 +348,19 @@ public class LocationDetailsAction extends DispatchAction{
 			String LocId = request.getParameter("locid");
 			
 			LocationVO edit_list = new LocationBD().editSchool(LocId,pojo);
+			List<LocationVO> edit_array=new ArrayList<LocationVO>();
+			edit_array.add(edit_list);
+			
+			
 			request.setAttribute("editlist",edit_list);
 			
 			request.setAttribute("operation","Edit");
+			
+			JSONObject obj = new JSONObject();
+			obj.put("editlist",edit_array);
+			obj.put("operation", "Edit");
+			response.getWriter().print(obj);
+			
 		}
 		catch (Exception e) {
 			logger.error(e.getMessage(), e);
@@ -364,7 +370,7 @@ public class LocationDetailsAction extends DispatchAction{
 				+ MessageConstants.END_POINT);
 		logger.info(JDate.getTimeString(new Date())
 				+ " Control in LocationDetailsAction : editSchool Ending");
-		return mapping.findForward(MessageConstants.ADD_LOCATION);
+		 return null;
 	}
 	
 	public ActionForward InactiveLocation(ActionMapping mapping,

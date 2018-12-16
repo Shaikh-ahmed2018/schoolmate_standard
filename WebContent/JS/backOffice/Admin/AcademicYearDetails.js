@@ -97,8 +97,6 @@ $(document).ready(function() {
 	 	}
 			
 			$(".editDesignationId").click(function() {
-				
-				
 				var getData ={"Acy_Code":$(this).closest("tr").attr("id"),
 						"status":$("#status").val()
 				};

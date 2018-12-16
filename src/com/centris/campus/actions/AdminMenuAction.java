@@ -6151,6 +6151,7 @@ public class AdminMenuAction extends DispatchAction {
 			
 			request.setAttribute("locationDetailsList", list);
 			request.setAttribute("status",status);
+			request.setAttribute("operation","Add");
 			/*if(list.size() >0){
 				request.setAttribute("schlstatus",list.get(0).getCuststatus()); 
 			}

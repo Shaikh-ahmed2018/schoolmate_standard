@@ -39,6 +39,7 @@
 
 				<div class="navbar-right">
 				
+				<!-- add btn -->
 				<logic:present name="UserDetails" scope="session">
 								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
 									<logic:equal value="CLSADD" name="daymap" property="key">
@@ -50,12 +51,12 @@
 									  </logic:equal>
 								  </logic:iterate>
 							  </logic:present>
+					<!-- : ends-->
 					
-					
-					
+					<!-- edit & delete-->
 					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
 						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
-							
+					<!--  :ends-->	
 					
 				</div>
 
@@ -122,23 +123,15 @@
 			</div>
 			</div>
 
-				
-
-				
-
-
-
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 					aria-labelledby="myModalLabel">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+								                   
 								<h3 class="modal-title" id="myModalLabel">Class Details</h3>
 							</div>
+							<!-- body:popup  -->
 							<div class="modal-body">
 								<div class="panel-body clearfix">
 								<div class="form-group clearfix">
@@ -189,8 +182,7 @@
 									<option value="15">XII</option>
 									</select>
 									</div>	
-									<div class="col-xs-7">
-										
+									<div class="col-xs-7">	
 											<input type="hidden" name="status" id="statusId" value=""/>
 											<input type="hidden" name="updateClassCode" id="updateClassCode" value=""/>
 											<input type="hidden" name="hiddenStreamId" id="hiddenStreamId" value=""/>
@@ -201,9 +193,9 @@
 						<input type="hidden" id="actionstatus" value="add" />		
 						</div>
 							</div>
-							
-							
-							<div class="modal-footer">
+							<!-- model body:ends -->
+						
+						<div class="modal-footer">
 						<span id="save" class="buttons button-blue">Save</span>
           				<span class="buttons button-simple" data-dismiss="modal">Close</span>
        				 </div>

@@ -66,8 +66,6 @@ function handle(e){
 					  </logic:equal>
 					  </logic:iterate>
 					  </logic:present>
-					  
-
 				</div>
 				
 			</div>
@@ -142,12 +140,12 @@ function handle(e){
 						
 					</div>
 						</div>
-						<div class="modal-footer">
-						<span id="save" class="buttons button-blue">Save</span>
-          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
-        </div>
-
+					<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span> <span
+							class="buttons button-simple" data-dismiss="modal">Close</span>
 					</div>
+
+				</div>
 				</div>
 			</div>
 			
