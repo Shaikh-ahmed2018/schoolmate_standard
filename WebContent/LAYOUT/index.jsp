@@ -78,7 +78,6 @@ h2 {
 	
 	font-family: Roboto Regular;
 	margin: 0;
-	padding: 5px 35%;
 	width: 100%;
 	text-align: center
 }
@@ -153,6 +152,9 @@ position: relative;
 	bottom: 0px;
 	height: 120px;
 	}
+	.loginlogo{
+		text-align: center;
+	}
 	</style>
 		<title>shoolmate</title>
 	</head>
@@ -225,7 +227,7 @@ position: relative;
         	 </div>
         	<div class="col-lg-3 col-md-3 col-sm-4" style="background: #fff;min-height: 310px;padding: 65px;">
         	<h2 >Sign In</h2>
-        	<div>
+        	<div class="loginlogo">
         	<img src="./images/Logo/logo.png" />
         	</div>
         	<div id="login-form">
