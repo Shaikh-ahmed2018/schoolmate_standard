@@ -15,14 +15,6 @@
 
 	<div class="content" id="div1">
 		<div id="dialog"></div>
-		<div class="searchWrap">
-			<div class="col-md-12 input-group" id="div2">
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Bank Master</span>
-				</p>
-			</div>
-		</div>
 
 		<div class="errormessagediv" align="center" style="display: none;">
 			<div class="message-item">
@@ -41,55 +33,76 @@
 		</div>
 
 
-		<div class="panel panel-primary">
 			<div class="panel-heading clearfix">
-				<a data-toggle="collapse" data-parent="#accordion2"
-					href="#collapseOne" style="color: #fff;">
-					<h3 class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Bank Master
-					</h3></a>
-
+				<h3 class="panel-title" style="color: #000000;">Bank Master</h3>
+				
 				<div class="navbar-right">
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="SLCADD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<a href="bankMaster.html?method=addBank">
-									 <span id="Add" class="buttons">New</span>
-									</a>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="SLCUPD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="Edit">Modify</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="SLCDEL" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="Remove">InActive</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-
+				<!-- add btn -->
+				<logic:present name="UserDetails" scope="session">
+								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
+									<logic:equal value="SLCADD" name="daymap" property="key">
+										<logic:equal value="true" name="daymap" property="value">	
+											<span id="savebutton" class="btn btn-xs btn-primary margin-t-5" data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" ></span>Add New Class</span>				
+					 					 </logic:equal>
+									  </logic:equal>
+								  </logic:iterate>
+							  </logic:present>
+					<!-- : ends-->
+					
+					<!-- edit & delete-->
+					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="SLCUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="SLCDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+					<!--  :ends-->	
 				</div>
 
 			</div>
+			
+			
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h3 class="modal-title" id="myModalLabel">Bank Details</h3>
+							</div>
+							<!-- body:popup  -->
+							<div class="modal-body">
+							<div class="panel-body clearfix">
+									<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-5"
+									style="text-align: right;" id="inputnames">Bank Name</label>
+									<div class="col-xs-7">
+										<input type="text" name="bankname" id="bankname"
+											class="form-control" maxlength="50" onkeypress="return CheckIsNumeric1(event);" 
+											value="<logic:present name="bankrecord" scope="request"><bean:write name="bankrecord" property="name" ></bean:write></logic:present>" />
+									</div>
+								</div>
+                                  
+                                  <div class="form-group clearfix">
+									<label for="inputPassword" class="control-label col-xs-5"
+									style="text-align: right;" 	id="inputnames">Short Name</label>
+									<div class="col-xs-7">
+										<input type="text" name="bankshortname" id="bankshortname"
+											maxlength="6" class="form-control" onkeypress="return CheckIsNumeric(event);" 
+											value="<logic:present name="bankrecord" scope="request"><bean:write name="bankrecord" property="shortname" ></bean:write></logic:present>" />
+									</div>
+								</div>
+					
+								
+								
+						</div>
+							</div>
+							<!-- model body:ends -->
+						
+						<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span>
+          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
+       				 </div>
+
+						</div>
+					</div>
+				</div>
 
 			<div id="collapseOne" class="accordion-body collapse in">
 				<div class="row">
@@ -185,7 +198,6 @@
 				</div>
 
 			</div>
-		</div>
 	</div>
 </body>
 </html>

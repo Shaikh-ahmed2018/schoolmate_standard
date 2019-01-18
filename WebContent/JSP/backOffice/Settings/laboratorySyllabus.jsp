@@ -17,7 +17,7 @@
 			<div class="" id="div2">
 				<p>
 					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Practical Syllabus Details</span>
+						id="pageHeading">Practical Syllabus Details df</span>
 				</p>
 			</div>
 

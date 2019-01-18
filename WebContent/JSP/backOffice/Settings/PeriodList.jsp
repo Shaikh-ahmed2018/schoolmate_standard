@@ -11,24 +11,8 @@
 </head>
 
 <body>
-
-	<div class="content" id="div1">
+<div class="content" id="div1">
 		<div id="dialog"></div>
-		<div class="searchWrap">
-			<div class="" id="div2">
-
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Period Details</span>
-				</p>
-			</div>
-
-			<input type="hidden" name="searchterm" class="searchtermclass"
-				id="searchexamid"
-				value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" />
-		</logic:present>'></input>
-		</div>
-
 		<div class="errormessagediv" align="center" style="display: none;">
 			<div class="message-item">
 				<!-- Warning -->
@@ -46,48 +30,26 @@
 		</div>
 
 
-		<div class="panel panel-primary">
+		
 			<div class="panel-heading clearfix">
-				<a data-toggle="collapse" data-parent="#accordion2" href="#classOne"
-					style="color: #fff;"><h3 class="panel-title class" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Period Details
-					</h3></a>
-
+				<h3 class="panel-title class" style="color: #000000;">Period Details</h3>
 				<div class="navbar-right">
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="CLSADD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<a href="periodmaster.html?method=addPeriod"><span
-										class="buttons" style="left: -1px;">New</span></a>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
+				<logic:present name="UserDetails" scope="session">
+								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
+									<logic:equal value="CLSADD" name="daymap" property="key">
+										<logic:equal value="true" name="daymap" property="value">	
+											<span id="savebutton" class="btn btn-xs btn-primary margin-t-5" data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" ></span>Add New Period</span>				
 					
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="CLSUPD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="edit" style="left: -1px;">Modify</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="CLSDEL" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value"> 
-									<span class="buttons" id="delete">Remove</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
+					 					 </logic:equal>
+									  </logic:equal>
+								  </logic:iterate>
+							  </logic:present>
+							  
+							  <!-- edit & delete-->
+					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+					<!--  :ends-->	
 				</div>
 
 			</div>
@@ -154,20 +116,87 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h3 class="modal-title" id="myModalLabel">Download</h3>
+								<h3 class="modal-title" id="myModalLabel">Period Details</h3>
 							</div>
 							<div class="modal-body">
-								<span id="excelDownload"><img src="images/xl.png"
-									class="xl"></span>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-									id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
-							</div>
+									<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Branch</label>
+									<div class="col-xs-7">
+										<select id="locationname" name="locId" class="form-control"
+											onchange="HideError(this)">
+											<logic:present name="locationList">
+												<logic:iterate id="Location" name="locationList">
+													<option
+														value="<bean:write name="Location" property="locationId"/>"><bean:write
+															name="Location" property="locationName" /></option>
+												</logic:iterate>
+											</logic:present>
+
+										</select>
+									</div>
+
+								</div>
+
+								
+								
+								<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Stream </label>
+									<div class="col-xs-7">
+
+										<select name="streamId" id="StreamName" class="form-control"
+											onchange="HideError(this)">
+											<option value="">-------Select------</option>
+										</select>
+
+										<%-- <input type="text" class="form-control" id="sectionName" onclick="HideError(this)"
+											placeholder="" value="<logic:present name="editClasslist" ><bean:write name="editClasslist" property="secDetailsName"/></logic:present>"/> --%>
+
+									</div>
+								</div>
+								
+								
+								<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Class</label>
+									<div class="col-xs-7">
+
+										<select name="clsId" id="classId" class="form-control"
+											onchange="HideError(this)">
+											<option value="">-------Select------</option>
+										</select>
+									</div>
+								</div>
+
+
+								<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Number
+										of Period</label>
+									<div class="col-xs-7">
+										<input type="text" class="form-control" name="noofperiod"
+											id="noofPeriod" onclick="HideError(this)"
+											onkeypress="return CheckIsNumeric(event);"
+											value='<logic:present name="editelist"><bean:write name="editelist" property="noofperiod"/></logic:present>' />
+
+									</div>
+								</div>
+								<input type="hidden" name="locId" id="hiddenlocId"
+									value="<logic:present name="editelist" ><bean:write name="editelist" property="locId"/></logic:present>" />
+								<input type="hidden" name="streamId" id="hiddenstreamId"
+									value="<logic:present name="editelist" ><bean:write name="editelist" property="streamId"/></logic:present>" />
+								<input type="hidden" name="clsId" id="hiddenclsId"
+									value="<logic:present name="editelist" ><bean:write name="editelist" property="clsId"/></logic:present>" />
+								<input type="hidden" name="hiddenperiodId" id="hiddenperiodId"
+									value="<logic:present name="editelist" ><bean:write name="editelist" property="slno"/></logic:present>" />
+								
 
 						</div>
+						<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span>
+          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
+       				 </div>
 					</div>
 				</div>
 				
@@ -216,7 +245,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
 
 	</div>
 	</div>

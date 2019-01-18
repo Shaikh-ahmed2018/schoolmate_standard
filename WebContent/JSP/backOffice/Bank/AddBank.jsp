@@ -82,7 +82,7 @@ function  CheckIsNumeric1(objEvt) {
 						<a data-toggle="collapse" data-parent="#accordion" href="#"
 							style="color: #000000"><h3 class="panel-title">
 								<i class="glyphicon glyphicon-menu-hamburger"></i>
-								&nbsp;&nbsp;New Bank
+								&nbsp;&nbsp;New Bank dsfd
 							</h3></a>
 
 						<div class="navbar-right">

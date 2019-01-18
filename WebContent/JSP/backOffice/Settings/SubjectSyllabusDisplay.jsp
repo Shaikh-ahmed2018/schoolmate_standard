@@ -15,24 +15,11 @@
 
 	<div class="content" id="div1">
 		<div id="dialog"></div>
-		<div class="searchWrap">
-			<div class="" id="div2">
-
-
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Subject Syllabus Details</span>
-				</p>
-			</div>
-
-
 
 			<input type="hidden" name="searchterm" class="searchtermclass"
 				id="searchexamid"
 				value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" />
 		</logic:present>'></input>
-
-		</div>
 
 		<div class="errormessagediv" align="center" style="display: none;">
 			<div class="message-item">
@@ -53,12 +40,7 @@
 
 		<div class="panel panel-primary">
 			<div class="panel-heading clearfix">
-	    		<a data-toggle="collapse" data-parent="#accordion2"
-					href="#subjectOne" style="color: #fff;"><h3 class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Subject
-						Details
-					</h3>
-				</a>
+	    		<h3 class="panel-title" style="color: #000000;">Subject Details</h3>
 			</div>
 			<!-- pop up -->
 

@@ -40,7 +40,7 @@ function isNumberKey(evt)
 <body>
 	<div class="content" id="div-main">
 		<p>
-			<img src="images/addstu.png" style="vertical-align: top;"/>&nbsp;<span id="pageHeading">New Practical</span>
+			<img src="images/addstu.png" style="vertical-align: top;"/>&nbsp;<span id="pageHeading">New Practical sdfds</span>
 		</p>
 					<logic:present name="successmessagediv" scope="request">
 						<div class="successmessagediv" align="center">

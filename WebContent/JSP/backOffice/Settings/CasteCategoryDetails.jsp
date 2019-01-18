@@ -7,138 +7,140 @@
 <html lang="en">
 
 <head>
-  <script type="text/javascript" src="JS/backOffice/Settings/CasteCategory.js"></script>
-
-
-
+<script type="text/javascript"
+	src="JS/backOffice/Settings/CasteCategory.js"></script>
 </head>
 
 <body>
 
 	<div class="content" id="div1">
 		<div id="dialog"></div>
-		<div class="col-md-12 input-group" id="div2">
-			<p>
-				<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-					id="pageHeading">Caste Category Details</span>
-			</p>
+		<input type="hidden" name="searchterm" class="searchtermclass"
+			id="searchexamid"
+			value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" /></logic:present>'></input>
+
+
+		<div class="errormessagediv" align="center" style="display: none;">
+			<div class="message-item">
+				<!-- Warning -->
+				<a href="#" class="msg-warning bg-msg-warning"><span
+					class="validateTips"></span></a>
+			</div>
 		</div>
-			<input type="hidden" name="searchterm" class="searchtermclass"
-				id="searchexamid"
-				value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" /></logic:present>'></input>
 
-
-			<div class="errormessagediv" align="center" style="display: none;">
-				<div class="message-item">
-					<!-- Warning -->
-					<a href="#" class="msg-warning bg-msg-warning"><span
-						class="validateTips"></span></a>
-				</div>
+		<div class="successmessagediv" align="center" style="display: none;">
+			<div class="message-item">
+				<!-- Warning -->
+				<a href="#" class="msg-success bg-msg-succes"><span
+					class="validateTips"></span></a>
 			</div>
+		</div>
 
-			<div class="successmessagediv" align="center" style="display: none;">
-				<div class="message-item">
-					<!-- Warning -->
-					<a href="#" class="msg-success bg-msg-succes"><span
-						class="validateTips"></span></a>
-				</div>
+
+		<div class="panel-heading clearfix">
+			<h3 class="panel-title" style="color: #000000;">Caste Category
+				Details</h3>
+
+			<div class="navbar-right">
+
+				<logic:present name="UserDetails" scope="session">
+					<logic:iterate id="daymap" name="UserDetails"
+						property="permissionmap" scope="session">
+						<logic:equal value="CASCATCRE" name="daymap" property="key">
+							<logic:equal value="true" name="daymap" property="value">
+								<span id="savebutton" class="btn btn-xs btn-primary margin-t-5"
+									data-toggle="modal" data-target="#myModal"> <span
+									class="glyphicon glyphicon-plus"></span>Add Caste Category
+								</span>
+
+							</logic:equal>
+						</logic:equal>
+					</logic:iterate>
+				</logic:present>
+				<!-- : ends-->
+
+				<!-- edit & delete-->
+				<input type="hidden" id="editPermission"
+					value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CASCATUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+				<input type="hidden" id="delPermission"
+					value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CASCATDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+				<!--  :ends-->
+
 			</div>
+		</div>
+		<!-- pop up -->
 
-
-			<div class="panel panel-primary">
-				<div class="panel-heading clearfix">
-
-					<a data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne">
-						<h3 class="panel-title" style="color: #000000;">
-							<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Caste
-							Category Details
-						</h3>
-					</a>
-
-
-					<div class="navbar-right">
-						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASCATCRE" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<a
-											href="religionCastCasteCategory.html?method=addCasteCategory">
-											<span class="buttons">New</span>
-										</a>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
-
-						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASCATUPD" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<span class="buttons" id="editReligion">Modify</span>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
-
-						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASCATDEL" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<span class="buttons" id="inactive">InActive</span>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
-
-						<!-- <span  class="buttons" id="iconsimg" data-toggle="modal" data-target="#myModal" 
-						 data-toggle="tooltip" data-placement="bottom" title="Download">Download </span> -->
-
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="myModalLabel">Caste Category</h3>
 					</div>
-				</div>
-				<!-- pop up -->
-
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-					aria-labelledby="myModalLabel">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h3 class="modal-title" id="myModalLabel">Download</h3>
-							</div>
-							<div class="modal-body">
-								<span id="excelDownload"><img src="images/xl.png"
-									class="xl"></span>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-									id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+					<div class="modal-body">
+					<div class="panel-body clearfix">
+						<div class="form-group clearfix">
+							<label for="inputEmail" class="control-label col-xs-4"
+								style="text-align: right; line-height: 35px;">Religion<font
+								style="color: red;">*</font></label>
+							<div class="col-xs-7">
+								<select name="religionName" id="religion" class="form-control"
+									onchange="HideError(this)">
+									<option value=""></option>
+								</select>
 							</div>
 						</div>
+						<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+								style="text-align: right; line-height: 35px;">Caste<font
+								style="color: red;">*</font></label>
+							<div class="col-xs-7">
+								<select name="caste" id="casteId"
+									class="form-control" onchange="HideError(this)">
+									<option value="">----------Select----------</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="line-height: 35px;">Caste Category<font style="color: red;">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="casteCategory" id="casteCategoryNameId" onclick="HideError(this)"
+										class="form-control" placeholder="" maxlength="30"
+										value=''></input>
+								</div>
+							</div>
 					</div>
+					</div>
+					<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span>
+          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
+       				 </div>
+					
 				</div>
+			</div>
+		</div>
 
-	 <input type="hidden" id="hiddenstatus" name="hiddenstatus"
-	 value="<logic:present name='status' scope='request' ><bean:write name='status'/></logic:present>" />
+		<input type="hidden" id="hiddenstatus" name="hiddenstatus"
+			value="<logic:present name='status' scope='request' ><bean:write name='status'/></logic:present>" />
 
-     <input type="hidden" id="currentstatus" name="currentstatus" 
-     value="<logic:present name="currentstatus" scope="request"><bean:write name="currentstatus"/></logic:present>" />
+		<input type="hidden" id="currentstatus" name="currentstatus"
+			value="<logic:present name="currentstatus" scope="request"><bean:write name="currentstatus"/></logic:present>" />
 
-     <input type="hidden" id="historysearchname" 
-	  value='<logic:present name="historysearchname" scope="request"><bean:write name="historysearchname" /></logic:present>'></input>
-	
-	 <input type="hidden" id="historystatus" 
-	  value='<logic:present name="historystatus" scope="request"><bean:write name="historystatus" /></logic:present>'></input>
-	  		
+		<input type="hidden" id="historysearchname"
+			value='<logic:present name="historysearchname" scope="request"><bean:write name="historysearchname" /></logic:present>'></input>
+
+		<input type="hidden" id="historystatus"
+			value='<logic:present name="historystatus" scope="request"><bean:write name="historystatus" /></logic:present>'></input>
+
 
 		<div id="collapseOne" class="accordion-body collapse in">
-			<div class="panel-body" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-bottom: 10px;">
+			<div class="panel-body"
+				style="font-family: Roboto, sans-serif; font-size: 13px; color: #000; margin-bottom: 10px;">
 
-				<div class="col-md-6" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-top: 10px;">
+				<div class="col-md-6"
+					style="font-family: Roboto, sans-serif; font-size: 13px; color: #000; margin-top: 10px;">
 					<div class="form-group clearfix">
 						<label for="inputPassword" class="control-label col-xs-5"
 							style="text-align: right; line-height: 35px;">Status</label>
@@ -150,32 +152,33 @@
 						</div>
 					</div>
 					<div class="form-group clearfix">
-					<label for="inputPassword" class="control-label col-xs-5"
+						<label for="inputPassword" class="control-label col-xs-5"
 							style="text-align: right; line-height: 35px;">Search</label>
-							<div class="col-xs-7">
+						<div class="col-xs-7">
 							<input type="text" name="searchname" id="searchname"
-									class="form-control" Placeholder="Search......">
-									</div>
-								<!-- <span class="input-group-btn">
+								class="form-control" Placeholder="Search......">
+						</div>
+						<!-- <span class="input-group-btn">
 									<button class="btn btn-default" type="button" id="search">
 										<i class="fa fa-search"></i>
 									</button>
 								</span> -->
 					</div>
-					<div class="form-group clearfix"> 
-						<div class="col-xs-5">
-							</div>
+					<div class="form-group clearfix">
+						<div class="col-xs-5"></div>
 						<div class="col-xs-7" style="text-align: left;">
-								<span class="buttons" id="search" style="font-weight: normal;">Search</span>  
-								<span class="buttons" id="resetbtn" style="font-weight: normal;">Reset</span>
-						</div></div>
+							<span class="buttons" id="search" style="font-weight: normal;">Search</span>
+							<span class="buttons" id="resetbtn" style="font-weight: normal;">Reset</span>
+						</div>
+					</div>
 				</div>
 
 				<logic:present name="religionList" scope="request">
 					<table class="table" id="allstudent">
 						<thead>
 							<tr>
-								<th><input type='checkbox' name='selectall' id='selectall' style='text-align: center'/></th>
+								<th><input type='checkbox' name='selectall' id='selectall'
+									style='text-align: center' /></th>
 								<th>Religion</th>
 								<th>Caste</th>
 								<th>Caste Category</th>

@@ -5,28 +5,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script type="text/javascript" src="JS/backOffice/Settings/Occupation.js"></script>
+<script type="text/javascript"
+	src="JS/backOffice/Settings/Occupation.js"></script>
 </head>
 
 <body>
-	<div id="loder" style="display: none; position:absolute; height: 800px;width: 800px;left: 0;right: 0;top: -40px;;bottom: 0;margin: auto;z-index: 99999; "><img style="width: 165px;position: absolute;left: 0;right: 0;height: 165px;bottom: 0;top: -190px;margin: auto;" src="./images/ajax-loading.gif"/></div>
+	<div id="loder"
+		style="display: none; position: absolute; height: 800px; width: 800px; left: 0; right: 0; top: -40px;; bottom: 0; margin: auto; z-index: 99999;">
+		<img
+			style="width: 165px; position: absolute; left: 0; right: 0; height: 165px; bottom: 0; top: -190px; margin: auto;"
+			src="./images/ajax-loading.gif" />
+	</div>
 	<div class="content" id="div1">
 		<div id="dialog"></div>
-		<div class="searchWrap">
-			<div class="col-md-12 input-group" id="div2">
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Occupation Details</span>
-				</p>
-			</div>
-
-
-				<input type="hidden" name="searchterm" class="searchtermclass"
-					id="searchexamid"
-					value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" />
+		<input type="hidden" name="searchterm" class="searchtermclass"
+			id="searchexamid"
+			value='<logic:present name="searchnamelist"><bean:write name="searchnamelist" />
 
 													</logic:present>'></input>
-		</div>
+
 
 		<div class="errormessagediv" align="center" style="display: none;">
 			<div class="message-item">
@@ -44,175 +41,156 @@
 			</div>
 		</div>
 
-		<div class="panel panel-primary clearfix">
-			<div class="panel-heading clearfix">
-				<a data-toggle="collapse" data-parent="#accordion2"
-					href="#collapseOne" style="color: #fff;"><h3 class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Occupation
-						Details
-					</h3></a>
+		<div class="panel-heading clearfix">
+			<h3 class="panel-title" style="color: #000000;">Occupation
+				Details</h3>
 
-
-
-				<div class="navbar-right" style="right:3px;">
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="OCUCRE" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-
-									<a href="religionCastCasteCategory.html?method=addOccupation"><span
-										class="buttons">New</span> </a>
-								</logic:equal>
+			<div class="navbar-right">
+				<!-- add btn -->
+				<logic:present name="UserDetails" scope="session">
+					<logic:iterate id="daymap" name="UserDetails"
+						property="permissionmap" scope="session">
+						<logic:equal value="OCUCRE" name="daymap" property="key">
+							<logic:equal value="true" name="daymap" property="value">
+								<span id="savebutton" class="btn btn-xs btn-primary margin-t-5"
+									data-toggle="modal" data-target="#myModal"> <span
+									class="glyphicon glyphicon-plus"></span>Add New Class
+								</span>
 							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="OCUUPD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="editOccupation">Modify</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="OCUDEL" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="inactive">InActive</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-
-					<!-- <span  class="buttons" id="iconsimg" data-toggle="modal" data-target="#myModal" 
-						 data-toggle="tooltip" data-placement="bottom" title="Download">Download </span> -->
-
-				</div>
+						</logic:equal>
+					</logic:iterate>
+				</logic:present>
+				<!-- : ends-->
+				<!-- edit & delete-->
+				<input type="hidden" id="editPermission"
+					value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="OCUUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+				<input type="hidden" id="delPermission"
+					value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="OCUDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+				<!--  :ends-->
 			</div>
-			<!-- pop up -->
 
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel">Download</h3>
-						</div>
-						<div class="modal-body">
-							<span id="excelDownload"><img src="images/xl.png"
-								class="xl"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-								id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
-						</div>
+		</div>
+		<!-- pop up -->
 
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="myModalLabel">Occupation List</h3>
 					</div>
+					<div class="modal-body">
+						<div class="panel-body clearfix">
+							<div class="form-group">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Occupation</label>
+								<div class="col-xs-7">
+									<input type="text" name="religion" id="occupation"
+										onclick="HideError(this)" class="form-control" placeholder=""
+										maxlength="30" value=''></input>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span> <span
+							class="buttons button-simple" data-dismiss="modal">Close</span>
+					</div>
+
 				</div>
 			</div>
-    
-    <input type="hidden" id="currentstatus" name="currentstatus" 
-    value="<logic:present name="currentstatus" scope="request"><bean:write name="currentstatus"/></logic:present>" />
+		</div>
 
-	<input type="hidden" id="hiddenhistorysearchname" 
-	value='<logic:present name="historysearchname" scope="request"><bean:write name="historysearchname" /></logic:present>'></input>
-	
-	<input type="hidden" id="hiddenhistorystatus" 
-	value='<logic:present name="historystatus" scope="request"><bean:write name="historystatus" /></logic:present>'></input>
-		
+		<input type="hidden" id="currentstatus" name="currentstatus"
+			value="<logic:present name="currentstatus" scope="request"><bean:write name="currentstatus"/></logic:present>" />
 
-			<input type="hidden" id="hiddenstatus" name="hiddenstatus"
-				value="<logic:present name='status' scope='request' ><bean:write name='status'/></logic:present>" />
-			
+		<input type="hidden" id="hiddenhistorysearchname"
+			value='<logic:present name="historysearchname" scope="request"><bean:write name="historysearchname" /></logic:present>'></input>
 
-			<div id="collapseOne" class="accordion-body collapse in">
-				<div class="panel-body"
-					style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-bottom: 10px;">
-					
+		<input type="hidden" id="hiddenhistorystatus"
+			value='<logic:present name="historystatus" scope="request"><bean:write name="historystatus" /></logic:present>'></input>
+
+
+		<input type="hidden" id="hiddenstatus" name="hiddenstatus"
+			value="<logic:present name='status' scope='request' ><bean:write name='status'/></logic:present>" />
+
+
+		<div id="collapseOne" class="accordion-body collapse in">
+			<div class="panel-body"
+				style="font-family: Roboto, sans-serif; font-size: 13px; color: #000; margin-bottom: 10px;">
+
 				<div class="col-md-6"
-				style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; margin-top: 10px;">
-				<div class="form-group clearfix">
-					<label for="inputPassword" class="control-label col-xs-5"
-						style="text-align: right; line-height: 35px;">Status</label>
-					<div class="col-xs-7">
-						<select id="status" name="status" class="form-control">
-							<option value="Y">Active</option>
-							<option value="N">InActive</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group clearfix">
-				<label for="inputPassword" class="control-label col-xs-5"
-						style="text-align: right; line-height: 35px;">Search</label>
+					style="font-family: Roboto, sans-serif; font-size: 13px; color: #000; margin-top: 10px;">
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="control-label col-xs-5"
+							style="text-align: right; line-height: 35px;">Status</label>
 						<div class="col-xs-7">
-					<input type="text" name="searchname" id="searchname"
-						class="form-control" Placeholder="Search......">
+							<select id="status" name="status" class="form-control">
+								<option value="Y">Active</option>
+								<option value="N">InActive</option>
+							</select>
 						</div>
-					<!-- <span class="input-group-btn">
+					</div>
+
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="control-label col-xs-5"
+							style="text-align: right; line-height: 35px;">Search</label>
+						<div class="col-xs-7">
+							<input type="text" name="searchname" id="searchname"
+								class="form-control" Placeholder="Search......">
+						</div>
+						<!-- <span class="input-group-btn">
 						<button class="btn btn-default" type="button" id="search">
 							<i class="fa fa-search"></i>
 						</button>
 					</span> -->
-				</div>
-				<div class="form-group clearfix"> 
-						<div class="col-xs-5">
-							</div>
+					</div>
+					<div class="form-group clearfix">
+						<div class="col-xs-5"></div>
 						<div class="col-xs-7" style="text-align: left;">
-								<span class="buttons" id="search" style="font-weight: normal;">Search</span>  
-								<span class="buttons" id="resetbtn" style="font-weight: normal;">Reset</span>
-						</div></div>
-			</div>
-			
-					<div id="dialog-confirm"></div>
-					<logic:present name="religionList" scope="request">
-
-						<table class="table" id="allstudent">
-							<thead>
-								<tr>
-									<th><input type='checkbox' name='selectall' id='selectall'
-										style='text-align: center' onClick='selectAll()' /></th>
-									<th>Occupation</th>
-									<th>Remarks</th>
-								</tr>
-							</thead>
-							<tbody>
-								<logic:iterate name='religionList' id="religionList">
-									<tr>
-										<td><input type='checkbox' name='select' class='select'
-											style='text-align: center'
-											id='<bean:write name='religionList' property="occupationId"/>' /></td>
-										<td><bean:write name='religionList' property="occupation" /></td>
-										<td><bean:write name='religionList' property="remarks" /></td>
-									</tr>
-								</logic:iterate>
-							</tbody>
-						</table>
-
-
-						<div class='pagebanner'>
-							<select id='show_per_page'><option value='50'>50</option>
-								<option value='100'>100</option>
-								<option value='200'>200</option>
-								<option value='300'>300</option>
-								<option value='400'>400</option>
-								<option value='500'>500</option></select> <span class='numberOfItem'></span>
+							<span class="buttons" id="search" style="font-weight: normal;">Search</span>
+							<span class="buttons" id="resetbtn" style="font-weight: normal;">Reset</span>
 						</div>
-						<div class='pagination pagelinks'></div>
-					</logic:present>
-
+					</div>
 				</div>
+
+				<div id="dialog-confirm"></div>
+				<logic:present name="religionList" scope="request">
+
+					<table class="table" id="allstudent">
+						<thead>
+							<tr>
+								<th><input type='checkbox' name='selectall' id='selectall'
+									style='text-align: center' onClick='selectAll()' /></th>
+								<th>Occupation</th>
+								<th>Remarks</th>
+							</tr>
+						</thead>
+						<tbody>
+							<logic:iterate name='religionList' id="religionList">
+								<tr>
+									<td><input type='checkbox' name='select' class='select'
+										style='text-align: center'
+										id='<bean:write name='religionList' property="occupationId"/>' /></td>
+									<td><bean:write name='religionList' property="occupation" /></td>
+									<td><bean:write name='religionList' property="remarks" /></td>
+								</tr>
+							</logic:iterate>
+						</tbody>
+					</table>
+
+
+					<div class='pagebanner'>
+						<select id='show_per_page'><option value='50'>50</option>
+							<option value='100'>100</option>
+							<option value='200'>200</option>
+							<option value='300'>300</option>
+							<option value='400'>400</option>
+							<option value='500'>500</option></select> <span class='numberOfItem'></span>
+					</div>
+					<div class='pagination pagelinks'></div>
+				</logic:present>
+
 			</div>
 		</div>
 	</div>

@@ -34,11 +34,10 @@
 
 
 			<div class="panel-heading clearfix">
-				<h3 class="panel-title class" style="color: #000000;">Class Details
+				<h3 class="panel-title class" style="color: #000000;">Class Details sf
 					</h3>
 
 				<div class="navbar-right">
-				
 				<!-- add btn -->
 				<logic:present name="UserDetails" scope="session">
 								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
@@ -57,9 +56,7 @@
 					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
 						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CLSDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
 					<!--  :ends-->	
-					
 				</div>
-
 			</div>
 			<!-- pop up -->
 			
@@ -128,7 +125,6 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								                   
 								<h3 class="modal-title" id="myModalLabel">Class Details</h3>
 							</div>
 							<!-- body:popup  -->

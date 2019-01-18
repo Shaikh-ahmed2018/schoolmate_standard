@@ -20,22 +20,9 @@
 
 
 		<div class="col-md-12 input-group" id="div2">
-			<p>
-				<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-					id="pageHeading">Designation Details</span>
-			</p>
+			
 		</div>
 
-
-		<!-- <div class="input-group col-md-4" style="margin: 20px 0px;">
-
-			<input type="text" class="form-control" id="searchvalue"
-				Placeholder="Search......"> <span class="input-group-btn">
-				<button class="btn btn-default" type="button" id="searchbutton">
-					<i class="fa fa-search"></i>
-				</button>
-			</span>
-		</div> -->
 		<logic:present name="successmessagediv" scope="request">
 			<div class="successmessagediv" align="center">
 				<div class="message-item">
@@ -47,14 +34,6 @@
 		</logic:present>
 
 
-
-		<!-- 	<div class="successmessagediv" align="center" style="display: none;">
-			<div class="message-item">
-
-				<a href="#" class="msg-success bg-msg-succes"><span
-					class="successmessagediv"></span></a>
-			</div>
-		</div> -->
 
 		<div class="successmessagediv" align="center" style="display: none;">
 			<div class="message-item">
@@ -78,70 +57,29 @@
 			<div class="message-item1"></div>
 		</div>
 
-		<div class="panel panel-primary">
 			<div class="panel-heading clearfix">
-				<a data-toggle="collapse" data-parent="#accordion2"
-					href="#collapseOne" style="color: #fff;"><h3
-						class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Designation
-						Details
-					</h3></a>
+				<h3 class="panel-title" style="color: #000000;">Designation Details</h3>
+				
 				<div class="navbar-right">
-
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="DESCRE" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-
-									<a href="menuslist.html?method=adddesignation"> <span
-										class="buttons">New</span>
-									</a>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="DESUPD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span id="editDesignationId" class="buttons">Modify</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="DESDEL" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span id="inactive" class="buttons">InActive</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-
-
-					<!--  <span class="glyphicon glyphicon-print" style="font-size: 20px; line-height: 34px; color: #989898;"></span>
-					 <img src="images/rightline.png" style="margin-top: -5px;">
-					 </a>  -->
-
-					<!-- <span id="xlss" >
-						 <img src="images/download.png" class="download"  data-toggle="tooltip" data-placement="bottom" title="Download" >
-					 </span> -->
-
-
-					<!-- <span class="buttons" id="iconsimg" data-toggle="modal"
-						data-target="#myModal" data-toggle="tooltip"
-						data-placement="bottom" title="Download">Download </span> -->
-
+				<!-- add btn -->
+				<logic:present name="UserDetails" scope="session">
+								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
+									<logic:equal value="DESCRE" name="daymap" property="key">
+										<logic:equal value="true" name="daymap" property="value">	
+											<span id="savebutton" class="btn btn-xs btn-primary margin-t-5" data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" ></span>Add Designation</span>				
+					 					 </logic:equal>
+									  </logic:equal>
+								  </logic:iterate>
+							  </logic:present>
+					<!-- : ends-->
+					
+					<!-- edit & delete-->
+					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="DESUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="DESDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+					<!--  :ends-->	
 				</div>
+				
 
 				<script>
 					$(document).ready(function() {
@@ -158,17 +96,34 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel">Download</h3>
+							<h3 class="modal-title" id="myModalLabel">Designation</h3>
 						</div>
 						<div class="modal-body">
-							<span id="xlss"><img src="images/xl.png" class="xl"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-								id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+						<div class="panel-body clearfix">
+						<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Designation</label>
+								<div class="col-xs-7">
+									<input type="text" name="designationname" class="form-control"
+										id="designation" onkeypress="HideError(this)"
+										value='<logic:present name="DesignationLIst"><bean:write name="DesignationLIst" property="designation_name"/></logic:present>'></input>
+								</div>
+							</div>
+							<div class="form-group clearfix">
+								<label for="inputPassword" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Description</label>
+								<div class="col-xs-7">
+									<textarea style="resize: none" rows="4" cols="25" class="form-control" name="description" class="form-control"id="description"> <logic:present name="DesignationLIst"><bean:write name="DesignationLIst" property="designation_description" /></logic:present> </textarea>
+								</div>
+							</div>
+							
+						
 						</div>
+						</div>
+							<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span>
+          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
+       				 </div>
 
 					</div>
 				</div>
@@ -270,8 +225,6 @@
 				</div>
 				<br />
 			</div>
-		</div>
-	</div>
 
 	<!-- <script src="JS/newUI/jquery.js"></script>
 	<script src="JS/newUI/bootstrap.min.js"></script>

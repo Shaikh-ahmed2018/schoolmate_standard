@@ -14,7 +14,7 @@
 			<img src="images/addstu.png" style="vertical-align: top;"/>&nbsp;<span id="pageHeading">New Subject</span>
 		</p>
 		<div class="errormessagediv" align="center" style="display: none;">
-			<div class="message-item">
+			<div class="message-item"> 
 				<!-- Warning -->
 				<a href="#" class="msg-warning bg-msg-warning"><span
 					class="validateTips"></span></a>

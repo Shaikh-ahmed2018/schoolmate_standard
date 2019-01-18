@@ -14,11 +14,6 @@
 	<div class="content" id="div1">
 		<div id="dialog"></div>
 		<div class="col-md-12 input-group" id="div2">
-
-			<p>
-				<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-					id="pageHeading">Caste Details</span>
-			</p>
 		</div>
 			<input type="hidden" name="searchterm" class="searchtermclass"
 				id="searchexamid"
@@ -40,57 +35,27 @@
 			</div>
 
 
-			<div class="panel panel-primary">
 				<div class="panel-heading clearfix">
-					<a data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne" style="color: #fff;"><h3
-							class="panel-title" style="color: #000000;">
-							<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Caste
-							Details
-						</h3></a>
-
+					<h3 class="panel-title" style="color: #000000;">Caste Details</h3>
 
 					<div class="navbar-right">
-
+					
 						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASCRE" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<a href="religionCastCasteCategory.html?method=addCaste">
-											<span class="buttons">New</span>
-										</a>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
+								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
+									<logic:equal value="CASCRE" name="daymap" property="key">
+										<logic:equal value="true" name="daymap" property="value">	
+											<span id="savebutton" class="btn btn-xs btn-primary margin-t-5" data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" ></span>Add New Caste</span>				
+					
+					 					 </logic:equal>
+									  </logic:equal>
+								  </logic:iterate>
+							  </logic:present>
 
-						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASUPD" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<span class="buttons" id="editReligion">Modify</span>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
-
-						<logic:present name="UserDetails" scope="session">
-							<logic:iterate id="daymap" name="UserDetails"
-								property="permissionmap" scope="session">
-								<logic:equal value="CASDEL" name="daymap" property="key">
-									<logic:equal value="true" name="daymap" property="value">
-										<span class="buttons" id="inactive">InActive</span>
-									</logic:equal>
-								</logic:equal>
-							</logic:iterate>
-						</logic:present>
-
-
-						<!-- <span  class="buttons" id="iconsimg" data-toggle="modal" data-target="#myModal" 
-						 data-toggle="tooltip" data-placement="bottom" title="Download">Download </span> -->
-
+					<!-- edit & delete-->
+					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CASUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="CASDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+					<!--  :ends-->	
 
 					</div>
 				</div>
@@ -111,18 +76,46 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h3 class="modal-title" id="myModalLabel">Download</h3>
+								<h3 class="modal-title" id="myModalLabel">Caste Details</h3>
 							</div>
 							<div class="modal-body">
-								<span id="excelDownload"><img src="images/xl.png"
-									class="xl"></span>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-									id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+							<div class="form-group clearfix">
+									<label for="inputPassword" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Religion</label>
+									<div class="col-xs-7">
+										<select name="main_religion" id="main_religion"
+											class="form-control" onchange="HideError(this)">
+											<option value="">-------Select------</option>
+											<logic:present name="religiondetails">
+												<logic:iterate id="religiondetails" name="religiondetails">
+													<option
+														value='<bean:write name="religiondetails" property="religionId"/>'>
+														<bean:write name="religiondetails" property="religion" />
+													</option>
+												</logic:iterate>
+											</logic:present>
+										</select> 
+									</div>
+								</div>
+								
+							<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Caste</label>
+								<div class="col-xs-7">
+									<input type="text" name="religion" id="religionNameId"
+										onClick="HideError(this)" class="form-control" placeholder=""
+										maxlength="30"
+										value=''></input>
+								</div>
+								
 							</div>
+								
+								
+							</div>
+								<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span>
+          				<span class="buttons button-simple" data-dismiss="modal">Close</span>
+       				 </div>
 
 						</div>
 					</div>
@@ -207,7 +200,6 @@
 				</logic:present>
 
 			</div>
-		</div>
 	</div>
 	</div>
 

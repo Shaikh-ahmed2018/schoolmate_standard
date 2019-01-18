@@ -15,17 +15,6 @@
 
 	<div class="content" id="div1">
 		<div id="dialog"></div>
-		 
-			<div class="" id="div2">
-
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Holiday Details</span>
-				</p>
-
-			</div>
-		
-		
 		<div class="errormessagediv" align="center" style="display: none;">
 			<div class="message-item">
 				<!-- Warning -->
@@ -42,54 +31,28 @@
 			</div>
 		</div>
 
-		<div class="panel panel-primary">
 			<div class="panel-heading clearfix">
-				<a data-toggle="collapse" data-parent="#accordion2"
-					href="#collapseOne" style="color: #fff;"><h3
-						class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Holiday
-						Details
-					</h3></a>
-				<div class="navbar-right">
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="HOLCRE" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<a href="menuslist.html?method=addHoliday"> <span
-										class="buttons">New</span>
-									</a>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="HOLUPD" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="editspec">Modify</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-					
-					<logic:present name="UserDetails" scope="session">
-						<logic:iterate id="daymap" name="UserDetails"
-							property="permissionmap" scope="session">
-							<logic:equal value="HOLDEL" name="daymap" property="key">
-								<logic:equal value="true" name="daymap" property="value">
-									<span class="buttons" id="inactive">InActive</span>
-								</logic:equal>
-							</logic:equal>
-						</logic:iterate>
-					</logic:present>
-
-					
-				</div>
+				<h3 class="panel-title" style="color: #000000;">Holiday Details</h3> 
 				
-			</div>
+				<div class="navbar-right">
+				<logic:present name="UserDetails" scope="session">
+								 <logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session">
+									<logic:equal value="HOLCRE" name="daymap" property="key">
+										<logic:equal value="true" name="daymap" property="value">	
+											<span id="savebutton" class="btn btn-xs btn-primary margin-t-5" data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" ></span>Add New Class</span>				
+					
+					 					 </logic:equal>
+									  </logic:equal>
+								  </logic:iterate>
+							  </logic:present>
+					<!-- : ends-->
+					
+					<!-- edit & delete-->
+					<input type="hidden" id="editPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="HOLUPD" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+						<input type="hidden" id="delPermission" value="<logic:present name="UserDetails" scope="session"><logic:iterate id="daymap" name="UserDetails" property="permissionmap" scope="session"><logic:equal value="HOLDEL" name="daymap" property="key"><logic:equal value="true" name="daymap" property="value">true</logic:equal></logic:equal></logic:iterate></logic:present>">
+					<!--  :ends-->	
+				</div>
 			<!-- pop up -->
 
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -97,17 +60,67 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel">Download</h3>
+							<h3 class="modal-title" id="myModalLabel">Holiday</h3>
 						</div>
 						<div class="modal-body">
-							<span id="excelDownload"><img src="images/xl.png"
-								class="xl"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-								id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+						<div class="panel-body clearfix">
+							<div class='col-md-12' id="txtstyle">
+							<div class="col-md-6">
+								<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4" style="text-align: right; line-height: 35px;">Branch</label>
+									<div class="col-xs-7">
+										<select id="locationname" name="location" class="form-control" onchange="HideError(this)">
+											<logic:present name="locationList">
+											<logic:iterate id="Location" name="locationList">
+												<option value="<bean:write name="Location" property="locationId"/>">
+																<bean:write name="Location" property="locationName" />
+												</option>
+											</logic:iterate>
+											</logic:present>
+										</select>
+									</div>
+								</div>
+								<br />
+							</div>
+							
+							<div class="col-md-6" >
+								<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4" style="text-align: right; line-height: 35px;">Academic Year</label>
+									<div class="col-xs-7">
+										<select name="accyYear" id="accyYear" class="form-control" onchange="HideError(this)">
+										<option value="">-------------Select-----------</option>
+										<logic:present name ="AccYearList">
+										<logic:iterate id="AccYear" name="AccYearList">
+										<option value="<bean:write name="AccYear" property="accyearId"/>">
+														<bean:write name="AccYear" property="accyearname" />
+										</option>
+										</logic:iterate>
+										</logic:present>
+										</select>
+									</div>
+								</div>
+								<br />
+							</div>
+						</div>
+						<div class='row'>
+						<div class='col-md-12'>
+						<div class="form-group">
+						<table style="background: #fff;" class="table" id="addholiday">
+							<tr class='firstrow'>
+							<th style="font-size: 13px; text-align: center;" >Date</th>
+							<th style="font-size: 13px; text-align: center;">Weekday</th>
+							<th style="font-size: 13px; text-align: center; ">Holiday Name</th>
+							<th style="font-size:13px; text-align: center;">Holiday Type
+							
+							</th>
+							<th align="center" style="text-align:center;"><span style="cursor: pointer;"
+								class="glyphicon glyphicon-plus" title="Add more holidays" onclick="addMoreHoliday(this.form);"></span></th>
+							</tr>
+						</table>
+					</div>
+						</div>	
+						</div>
+						</div>
 						</div>
 
 					</div>

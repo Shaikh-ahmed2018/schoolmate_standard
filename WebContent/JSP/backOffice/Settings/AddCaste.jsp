@@ -69,7 +69,7 @@
 									<div class="col-xs-7">
 										<select name="main_religion" id="main_religion"
 											class="form-control" onchange="HideError(this)">
-											<option value="">------------------Select------------------</option>
+											<option value="">-------Select------</option>
 											<logic:present name="religiondetails">
 												<logic:iterate id="religiondetails" name="religiondetails">
 													<option
