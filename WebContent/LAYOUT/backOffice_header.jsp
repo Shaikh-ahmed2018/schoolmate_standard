@@ -23,7 +23,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
-<title>Shoolmate</title>
+<title>Schoolmate</title>
 
 <link href="CSS/newUI/modern-business.css" rel="stylesheet">
 <link href="CSS/newUI/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -109,7 +109,8 @@
                 $(".headerLogoutBlock").click(function(){
                 	$(".profiledropdown").fadeToggle();
                 });
-                $('.leftmenu').css('height', (window.innerHeight-57)+'px');
+                $('.leftmenu').css('min-height', (window.innerHeight-57)+'px');
+                $('.leftmenu').css('height', $("body").css("height"));
                
         });
 </script>

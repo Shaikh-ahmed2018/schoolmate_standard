@@ -328,7 +328,7 @@ outline:0;
      background: #2196F3; 
     width: 100%;
     z-index: 99;
-    left:-10px;
+    left:0px;
     
 }
 nav.navbar.navbar-inverse.navbar-fixed-top.globalNavBar {
@@ -363,6 +363,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top.globalNavBar {
 }
 .lftnav{
 	padding-right: 0px;
+	padding-left: 0px;
 }
 .bodycontent{
 	padding-left: 0px;
@@ -1173,12 +1174,7 @@ color: #2196F3; */
 	
 }
 @media (min-width: 768px){
-
-	.addLocation .modal-dialog{
-	width: 1058px;
-	}
-	
-	.modal-dialog {
+.modal-dialog {
     width: 520px;
     /* margin: 180px auto; */
     margin:73px auto;
