@@ -34,7 +34,7 @@
 
 
 			<div class="panel-heading clearfix">
-				<h3 class="panel-title class" style="color: #000000;">Class Details sf
+				<h3 class="panel-title class" style="color: #000000;">Class Details 
 					</h3>
 
 				<div class="navbar-right">

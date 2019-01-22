@@ -121,14 +121,21 @@ function locationInfo() {
 
 }
 
+
+
+
 $(function() {
 var loc = new locationInfo();
 loc.getCountries();
+
+
+
 
 if($("#hiddencountry").val()!="" || $("#hiddencountry").val()!=undefined){
 	loc.getStates($("#hiddencountry").val());
 	loc.getCities($("#hiddenstate").val());
 }
+
 
 $(".countries").on("change", function(ev) {
     var countryId = $(this).val();

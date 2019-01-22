@@ -16,8 +16,16 @@ public class AcademicYearPojo {
 	private String log_audit_session;
 	
 	private String custid;
-
+	private String action;
+		
+		public String getAction() {
+		return action;
+	}
 	
+	public void setAction(String action) {
+		this.action = action;
+	}
+
 	public String getCustid() {
 		return custid;
 	}

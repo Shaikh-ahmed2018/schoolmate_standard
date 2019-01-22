@@ -271,7 +271,6 @@ $(document).ready(function() {
 							}
 
 						});  
-
 						$(this).dialog("close");
 					  }
 					},
@@ -281,24 +280,12 @@ $(document).ready(function() {
 				}
 			});
 
-			$('#excelDownload')
-			.click(function() {
-						var searchTerm = $("#searchexamid").val().trim();
-						window.location.href = 'streamDetails.html?method=downloadStreamDetailsXLS&searchTerm='+ searchTerm;
-					});
-
-			$("#pdfDownload").click(function() {
-						var searchTerm = $("#searchexamid").val().trim();
-						window.location.href = 'streamDetails.html?method=downloadStreamDetailsPDF&searchTerm='+ searchTerm;
-					});
 			
 			$("#save").click(function(){
 
 				
 			     $(".successmessagediv").hide();
 			     $(".errormessagediv").hide();
-					
-			     
 					var streamname = $("#streamName").val().trim();
 					var description = $("#description").val().trim();
 					var streamId = $("#streamId").val().trim();

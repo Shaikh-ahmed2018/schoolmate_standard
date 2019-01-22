@@ -1,7 +1,6 @@
 function removeMessage() {
 
 	$(".successmessagediv").hide();
-	$(".successmessagediv").hide();
 
 }
 
@@ -13,7 +12,7 @@ $(document).ready(function() {
 	$(".addSchool").click(function(){
 		$("#operation").val("Add");
 	});
-	$("#save").click(function(){
+	$("#save").click(function(event){
 
 		event.preventDefault();
 		var locname = $("#schoolId").val();
@@ -437,8 +436,9 @@ function editPopUp(element){
 		async  :false,
 		success :function(data){
 			var result = $.parseJSON(data);
-			
-			alert(result.editlist[0].locationname);
+			var loc1 = new locationInfo();
+			  loc1.getStates(result.editlist[0].countryId);
+			  loc1.getCities(result.editlist[0].stateId);
 			$("#updatelocationname").val(result.editlist[0].locationname);
 			$("#updatelocationid").val(result.editlist[0].location_id);
 			$("#schoolId").val(result.editlist[0].locationname);
@@ -446,9 +446,14 @@ function editPopUp(element){
 			$("#cpeson").val(result.editlist[0].cperson);
 			$("#hiddencountry").val(result.editlist[0].countryId);
 			$("#hiddenstate").val(result.editlist[0].stateId);
+			
+			$("#countryId").val(result.editlist[0].countryId);
+			$("#stateId").val(result.editlist[0].stateId);
+		
 			$("#hiddencity").val(result.editlist[0].cityId);
+			$("#cityId").val(result.editlist[0].cityId);
 			$("#cmobileno").val(result.editlist[0].cmobileno);
-			$("#saffiliationno").val(result.editlist[0].affilno);
+			$("#affiliation").val(result.editlist[0].affilno);
 			$("#website").val(result.editlist[0].website);
 			$("#emailId").val(result.editlist[0].emailId);
 			$("#address2").val(result.editlist[0].address2);
@@ -457,6 +462,10 @@ function editPopUp(element){
 			$("#clandline").val(result.editlist[0].clandline);
 			$("#operation").val("Edit");
 			$("#hiddenschoollogoId").val(result.editlist[0].schoollogo);
+			
+			
+			
+
 			
 		}
 		

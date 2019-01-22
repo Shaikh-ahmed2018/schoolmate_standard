@@ -347,7 +347,7 @@ public class AcademicYearMasterDaoImpl implements AcademicYearMasterDao {
 		JLogger.log(0, JDate.getTimeString(new Date())
 				+ MessageConstants.START_POINT);
 		logger.info(JDate.getTimeString(new Date())
-				+ " Control in AcademicYearMasterDaoImpl : accyearNameCheck  Starting");
+				+ " Control in AcademicYearMasterDaoImpl :   Starting");
 		String status = null,value=null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -360,6 +360,10 @@ public class AcademicYearMasterDaoImpl implements AcademicYearMasterDao {
 		try {
 			conn = JDBCConnection.getSeparateConnection(userLoggingsVo);
 			if ("NULL".equalsIgnoreCase(ACY_pojo.getAcadamic_id())) {
+				
+				System.out.println("sdf:: if condition :: dsfds");
+				
+				
 				pstmt = conn .prepareStatement(AcademicYearSQLUtilConstants.CHECK_ACADEMICYEAR_NAME);
 
 				pstmt.setString(1, ACY_pojo.getAcadamic_name());
@@ -399,13 +403,14 @@ public class AcademicYearMasterDaoImpl implements AcademicYearMasterDao {
 				}
 			} else {
 				
+				System.out.println("sdf:: -else condition :: dsfds");
 				pstmt = conn.prepareStatement(AcademicYearSQLUtilConstants.CHECK_ACADEMICYEAR_NAME_WHILE_UPATE);
 
 				pstmt.setString(1, ACY_pojo.getAcadamic_name());
 				pstmt.setString(2, HelperClass.convertUIToDatabase(ACY_pojo.getStartDate()));
 				pstmt.setString(3,HelperClass.convertUIToDatabase(ACY_pojo.getEndDate()));
 				pstmt.setString(4, ACY_pojo.getAcadamic_id().trim());
-				//("CHECK_ACADEMICYEAR_NAME_WHILE_UPATE 3 -->>"+pstmt);
+				System.out.println("CHECK_ACADEMICYEAR_NAME_WHILE_UPATE 3 -->>"+pstmt);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 					count = rs.getInt("Acdname");
@@ -421,7 +426,7 @@ public class AcademicYearMasterDaoImpl implements AcademicYearMasterDao {
 					pstmt1.setString(1, HelperClass.convertUIToDatabase(ACY_pojo.getStartDate()));
 					pstmt1.setString(2, HelperClass.convertUIToDatabase(ACY_pojo.getEndDate()));
 					pstmt1.setString(3, ACY_pojo.getAcadamic_id().trim());
-					//("CHECK_ACADEMICYEAR_DATES_WHILE_UPATE 4 -->>"+pstmt1);
+					System.out.println("CHECK_ACADEMICYEAR_DATES_WHILE_UPATE 4 -->>"+pstmt1);
 					rs1 = pstmt1.executeQuery();
 
 					while (rs1.next()) {

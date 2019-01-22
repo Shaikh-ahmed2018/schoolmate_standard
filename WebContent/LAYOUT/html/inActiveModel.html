@@ -1,0 +1,41 @@
+
+		<div class="modal fade" id="inActiveModel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h3 class="modal-title" id="myModalLabel"></h3>
+					</div>
+					<div class="modal-body">
+						<div class="panel-body">
+						<p class='warningfont'></p>
+						<p id="warningreason" class="warningfont" style="color:red;"></p>
+						<label class="warningothers" for="">Reason:</label>
+						
+						<div>
+							<select style="width: 100%;" class="warningfont" name="inactivereason" id="inactivereason"
+							 onchange="HideError(this)">
+								<option value="">----------select----------</option>
+								<option value="Incorrect Entry">Incorrect Entry</option>
+								<option value="Not in use">Not in use </option>
+								<option value="others">Others </option>
+							</select>
+						</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<span id="inActiveYes" class="buttons button-blue">OK</span> <span
+							class="buttons button-simple" data-dismiss="modal">Cancel</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+		
+		message();
+		</script>

@@ -95,8 +95,13 @@ $(document).ready(function() {
 	 			AcademicYeardetailsListBystatus($("#status").val());
 	 		 }
 	 	}
+       $(".addClass").click(function(){
+    		$("#actionstatus").val("add");
+       });
 			
 			$(".editDesignationId").click(function() {
+				$("#actionstatus").val("editAction");
+				
 				var getData ={"Acy_Code":$(this).closest("tr").attr("id"),
 						"status":$("#status").val()
 				};
@@ -139,87 +144,7 @@ $(document).ready(function() {
 					+ searchText;
 			});
 			
-			$(document).on("click",".inactive",function(){
-				maxval=350;
-				if($("#status").val()=="N"){
-					maxval=280;
-					$("#dialog").dialog({ width: maxval});
-					}else{
-						$("#dialog").dialog({ width: maxval});
-					}
-				
-				accyearList=[];
 			
-				
-					var Ids=$(this).closest("tr").attr("id");
-					accyearList.push(Ids);
-				
- 
-			
-					$("#dialog").dialog("open");
-					$("#dialog").empty();
-					$("#dialog").append("<p class='warningfont'>Are you sure to "+$("#inactive").text()+"?</p>");
-					$("#dialog").append('<p id="warningreason" class="warningfont" style="color:red;">*Warning&nbsp;:&nbsp;If you Inactivate this Academic Year, you won\'t be able to view details related to Academic Year.</p>');
-					$("#dialog").append('<label class="warningothers" for="">Reason:</label>');
-					$("#dialog").append('<div><select style="width: 100%;" class="warningfont" name="inactivereason" id="inactivereason" onchange="HideError(this)">'
-							+ '<option value="">' + "----------select----------"
-							+ '</option>'
-							+ '<option value="Incorrect Entry">' + "Incorrect Entry"
-							+ '</option>'
-							+ '<option value="Not in use">' + "Not in use" 
-							+ '</option>'
-							+ '<option value="others">' + "Others" 
-							+ '</option>'+
-					'</select></div>');
-					
-					$("#dialog").append('<div><select style="width: 100%;" class="warningfont" name="activereason" id="activereason" onchange="HideError(this)">'
-							+ '<option value="">' + "----------select----------"
-							+ '</option>'
-							+ '<option value="Correct Entry">' + "Correct Entry"
-							+ '</option>'
-							+ '<option value="In use">' + "In use" 
-							+ '</option>'
-							+ '<option value="others">' + "Others" 
-							+ '</option>'+
-					'</select></div>');
-					
-					  $("#dialog").append('<div id="othreason"><label class="warningothers" >OtherReason:</label><input type="text" style="width: 100%;" class="warningfont" name=other id="otherreason" onclick="HideError(this)"/></div>');
-			     
-				  		  $("#othreason").hide();
-				  		  $("#activereason").hide();
-				  		  $('#inactivereason').change(function(){
-				  			$(".errormessagediv").hide();
-				  			var othersres=$('#inactivereason').val();
-				  			if(othersres == 'others'){
-				  				$("#othreason").show(); 
-				  				$("#activereason").hide();
-				  			}else{
-				  				$("#otherreason").val("");
-				  				$("#othreason").hide();
-				  				$("#inactivereason").show();
-				  				$("#activereason").hide();
-				  			}
-				  		});
-				  		if($("#status").val()=="N"){
-			  				$("#othreason").hide();
-			  				$("#warningreason").hide();
-			  				$("#activereason").show();
-			  				$("#inactivereason").hide();
-			  			}
-				  		$('#activereason').change(function(){
-				  		if($(this).val() == 'others'){
-			  				$("#othreason").show(); 
-			  				$("#activereason").show();
-			  				$("#inactivereason").hide();
-			  			}else{
-			  				$("#othreason").hide(); 
-			  				$("#activereason").show();
-			  				$("#inactivereason").hide();
-			  			}
-				  		});
-				  	  reason = $("#inactivereason").val();
-		
-			});
 
 			$("#dialog").dialog({
 				autoOpen: false,
@@ -286,6 +211,7 @@ $(document).ready(function() {
 								"activereason":$("#activereason").val(),
 								"otherreason":$("#otherreason").val(),
 								"status":$("#inactive").text(),
+								"sqlname":""
 								
 							},
 							success : function(response) {
@@ -412,6 +338,10 @@ $(document).ready(function() {
 					if (accid == "" || accid == null) {
 						accid = "NULL";
 					}
+					if($("#actionstatus").val()=="editAction")
+						$('.validateTips').text("Update Academic Year Details Progressing...");
+						else
+						$('.validateTips').text("Add Academic Year Details Progressing...");
 					var Check = {
 							"accyear" : accyear,
 							"startdate" : startdate,
@@ -429,15 +359,7 @@ $(document).ready(function() {
 							.parseJSON(data);
 							if (result.status == "success") {
 								$('.successmessagediv').show();
-								 
-								var page=window.location.href.substring(window.location.href.lastIndexOf("?")+1);
-								if(page.split("&")[0]=="method=editAcademicYear")
-								$('.successmessage').text("Update Academic Year Details Progressing...");
-								else
-								$('.successmessage').text("Add Academic Year Details Progressing...");
-								setTimeout(function() {
-									window.location.href = "menuslist.html?method=academicyear&status="+$("#hiddenstatus").val();
-								}, 3000);
+									location.reload();
 							} else {
 								$('.errormessagediv').show();
 								$('.validateTips').text("Failed to Add Academic Details! Try Again...");
@@ -456,7 +378,8 @@ $(document).ready(function() {
 						"accyearname" : $("#accyearname").val(),
 						"startdate" : $("#startdate").val(),
 						"enddate" : $("#enddate").val(),
-						"accid" : accid
+						"accid" : accid,
+						"action":$("#actionstatus").val()
 				};
 				var status = 0;
 
@@ -620,7 +543,7 @@ function AcademicYeardetailsListBystatus(status){
 				}
 				if($("#delPermission").val()=="true"){
 					$("td.actiontd").each(function(){
-						$(this).append('<span  class="btn btn-xs btn-primary margin-t-5 inactive" title="Active/Inactive"><span class="glyphicon glyphicon-link"></span> '+sts+'</span>');
+						$(this).append('<span data-toggle="modal" data-target="#inActiveModel" class="btn btn-xs btn-primary margin-t-5 inactive" title="Active/Inactive"  onclick="inactive(this);"><span class="glyphicon glyphicon-link"></span> '+sts+'</span>');
 					});
 				}
 				
@@ -656,6 +579,21 @@ function checkboxselect(){
 	});
 }
 
+function inactive(element){
+	$("p.warningfont").text("Are you sure to "+$("#inactive").text()+"?");
+	$("#warningreason").text('*Warning If you Inactivate this Academic Year, you won\'t be able to view details related to Academic Year.');
+	
+ 
+  		 
+  
+}
+
+function message(){
+	
+	
+	
+	
+}
 function HideError(pointer) 
 {
 	document.getElementById(pointer.id).style.border = "1px solid #ccc";

@@ -186,6 +186,10 @@ textarea {
 							<input type="hidden" id="hiddenboardlogoId" name="hiddenboardlogoId" value="<logic:present name="editlist"><bean:write name="editlist" property="boardlogo" /></logic:present>" />
 						
 						 </div>
+						 
+						 
+						 
+						 
 
                         <div class="col-md-6" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; padding-bottom: 9px;">
 								

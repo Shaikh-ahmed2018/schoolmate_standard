@@ -210,12 +210,9 @@ $("#prev").click(function(){
 				$("#rowid"+currMonthDay+currMonthVal+currentdate.getFullYear() +" td:nth-child(1)").append("<span class='todayHilight'>Today</span>");
 			},
 		});
-		$( "body" ).scrollTop( $("#rowid"+currMonthDay+currMonthVal+currentdate.getFullYear()).position().top);
-		$("#rowid"+currMonthDay+currMonthVal+currentdate.getFullYear()).css({
-			"background-color":"#cceefc",
-			"position":"relative"
-		});
-		$("#rowid"+currMonthDay+currMonthVal+currentdate.getFullYear() +" td:nth-child(1)").append("<span class='todayHilight'>Today</span>");
+		
+		
+		
 });
 
 function saveComment(){

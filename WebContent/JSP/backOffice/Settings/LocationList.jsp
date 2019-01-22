@@ -22,6 +22,9 @@
 #allstudent td:nth-child(1) {
 	width: 300px;
 }
+#myModal .modal-dialog{
+width:940px;
+}
 </style>
 </head>
 
@@ -129,7 +132,7 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h3 class="modal-title" id="myModalLabel">Download</h3>
+						<h3 class="modal-title" id="myModalLabel">School Details</h3>
 					</div>
 
 

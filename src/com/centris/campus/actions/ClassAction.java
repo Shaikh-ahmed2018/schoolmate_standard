@@ -390,14 +390,12 @@ public class ClassAction extends DispatchAction{
 			String title = "Modify Class";
 			request.setAttribute("title", title);
 			String locId=request.getParameter("locId");
-			
 			String streamId=request.getParameter("streamId");
 			String status=request.getParameter("status");
 			
 			ClassPojo editClasslist = new ClassBD().editClass(request.getParameter("classCode"),locId,dbdetails);
 			
 			System.out.println(editClasslist.getClassName());
-			
 			List<ClassPojo> list=new ArrayList<ClassPojo>();
 			list.add(editClasslist);
 			request.setAttribute("editClasslist", list);

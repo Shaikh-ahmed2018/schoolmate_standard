@@ -58,13 +58,7 @@
 	<div class="content" id="div1">
 		<div id="dialog"></div>
 		 
-			<div class="" id="div2">
-
-				<p>
-					<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span
-						id="pageHeading">Branch Details</span>
-				</p>
-			</div>
+			
 
 				<input type="hidden" name="searchterm" class="searchtermclass"
 					id="searchexamid"
@@ -90,19 +84,34 @@
 		</div>
 
 
-		<div class="panel panel-primary">
+	
 			<div class="panel-heading clearfix">
 				<a data-toggle="collapse" data-parent="#accordion2"
 					href="#collapseOne" style="color: #fff;">
 					<h3 class="panel-title" style="color: #000000;">
-						<span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Branch
-						Details
+						&nbsp;&nbsp;Branch Details
 					</h3></a>
-
-
-
+					
+					
 				<div class="navbar-right">
+					<logic:present name="UserDetails" scope="session">
+						<logic:iterate id="daymap" name="UserDetails"
+							property="permissionmap" scope="session">
+							<logic:equal value="SLCADD" name="daymap" property="key">
+								<logic:equal value="true" name="daymap" property="value">
+									<span class="btn btn-xs btn-primary margin-t-5 addClass"
+										data-toggle="modal" data-target="#myModal"> <span
+										class="glyphicon glyphicon-plus"></span>Add Branch </span>
+								</logic:equal>
+							</logic:equal>
+						</logic:iterate>
+					</logic:present>
+			    </div>
+			</div>
 
+
+
+<%-- 
 					<logic:present name="UserDetails" scope="session">
 						<logic:iterate id="daymap" name="UserDetails"
 							property="permissionmap" scope="session">
@@ -137,11 +146,11 @@
 							</logic:equal>
 						</logic:iterate>
 					</logic:present>
-
+ --%>
 
 				</div>
 
-			</div>
+			
 			<!-- pop up -->
 
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -149,18 +158,214 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h3 class="modal-title" id="myModalLabel">Download</h3>
+								<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h3 class="modal-title" id="myModalLabel">Branches</h3>
 						</div>
+						
 						<div class="modal-body">
-							<span id="excelDownload"><img src="images/xl.png"
-								class="xl"></span>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-								id="pdfDownload"><img src="images/pdf.png" class="pdf"></span>
+							<div class="panel-body">
+							
+							<div class="col-md-6"
+							style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; padding-bottom: 9px;">
+
+							<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">School
+									Name<font color="red">*</font></label>
+								<div class="col-xs-7">
+										<select id="schollid" name="locationnid" tabindex="1" class="form-control" required>
+											<!-- <option value="all">ALL</option> -->
+											<logic:present name="locationList">
+												<logic:iterate id="locationList" name="locationList">
+													<option value="<bean:write name="locationList" property="schoolId"/>"><bean:write name="locationList" property="schoolName" /></option>
+												</logic:iterate>
+											</logic:present>
+										</select>
+									</div>
+							</div>
+						
+						<input type="hidden" id="operation" name="operation"
+						 value="<logic:present name="editlist"><bean:write name="operation" /></logic:present>" />
+
+                         <div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">School Code<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="schoolcode" onclick="HideError(this)"
+										class="form-control" id="schoolcode" tabindex="3"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="schoolcode" /></logic:present>'></input>
+								   </div>
+						 </div>
+
+                    <div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Mobile No.<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="contactno" onclick="HideError(this)" tabindex="5"
+										class="form-control" id="contactno" maxlength="10" tabindex="7"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="contactno" /></logic:present>'></input>
+								   </div> <!-- maxlength="12" -->
+					 </div>
+					 
+					  <div class="form-group clearfix" style="margin-bottom:10px;">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Address1<font color="red">*</font>
+									</label>
+									<div class="col-xs-7">
+										<textarea style="" tabindex="7" class="form-control" name="address" id="address" onclick="HideError(this)"><logic:present name="editlist"><bean:write name="editlist" property="address" /></logic:present></textarea>
+									</div>
+					     </div>
+					 
+					      <div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Country<font color="red">*</font>
+									</label>
+									<div class="col-xs-7">
+										<select class="form-control countries" onchange="HideError(this)" tabindex="9" name="country" id="countryId">
+											<option value="">---------Select---------</option>
+										</select>
+									</div>
+					     </div>
+					     
+					     <div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">City/District<font color="red">*</font>
+									</label>
+									<div class="col-xs-7">
+										<select class="form-control cities" onchange="HideError(this)" tabindex="11" name="city" id="cityId">
+											<option value="">---------Select---------</option>
+										</select>
+									</div>
+						 </div>
+					 
+					     <div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Affiliated to<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="board" onclick="HideError(this)"
+										class="form-control" id="board" tabindex="13"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="board" /></logic:present>'></input>
+								   </div>
+							</div>
+						
+						<div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Board Logo</label>
+									<div class="col-xs-7" style="margin-bottom:5px;">
+										<input type="file" id="boardlogo" name="boardlogo" class="form-control" onclick="HideError(this)"
+										 style="width:76%;display: inline;" tabindex="15" value=""/> 
+										 
+									    <input type="button" id="downloadlicenceid" name="profile" class="downloadDoc1" value="Download" />
+										<span style="font-size:20px;color:red;cursor:pointer;" id="deleteProfile">  x</span>
+										 
+										 <span><img id="boardimagePreview" src="#" alt="image" width="35px" 
+											height="35px" style="margin-left:5px;display: none;margin-top: -6px;"/></span> 
+									</div>
+						 </div>
+						    	
+				 <input type="hidden" id="hiddenschoollogoId" name="hiddenschoollogoId"
+				  value="<logic:present name="editlist"><bean:write name="editlist" property="schoollogo" /></logic:present>" />
+								
+							<input type="hidden" id="hiddenboardlogoId" name="hiddenboardlogoId" value="<logic:present name="editlist"><bean:write name="editlist" property="boardlogo" /></logic:present>" />
+						
+						 </div>
+							
+							
+							
+                        <div class="col-md-6" style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; padding-bottom: 9px;">
+								
+							<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Location<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="locAddId" onclick="HideError(this)"
+										class="form-control" id="locAddId" tabindex="2"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="locationname" /></logic:present>'></input>
+								   </div>
+							</div>
+							
+				 <input type="hidden" id="hiddenlocaddressId" 
+				 value='<logic:present name="hiddenlocId" scope="request"><bean:write name="hiddenlocId"/></logic:present>'></input>
+					
+					<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Email Id<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="emailId" onclick="HideError(this)"
+										class="form-control" id="emailId" tabindex="4"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="emailId" /></logic:present>'></input>
+								</div>
+				    </div>
+						
+					 <div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Land line No.</label>
+								<div class="col-xs-7">
+									<input type="text" name="landlineno" onclick="HideError(this)"
+										class="form-control" id="landlineno"  tabindex="6"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="landLineNo" /></logic:present>'></input>
+								   </div> <!-- maxlength="12" -->
+					 </div>	
+					
+					     <div class="form-group clearfix" style="margin-bottom:10px;">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">Address2
+									</label>
+									<div class="col-xs-7">
+										<textarea style="" tabindex="8" class="form-control" name="address2" id="address2" onclick="HideError(this)"><logic:present name="editlist"><bean:write name="editlist" property="address2" /></logic:present></textarea>
+									</div>
+					      </div>
+						
+						   <div class="form-group clearfix">
+									<label for="inputEmail" class="control-label col-xs-4"
+										style="text-align: right; line-height: 35px;">State<font color="red">*</font>
+									</label>
+									<div class="col-xs-7">
+										<select class="form-control states" onchange="HideError(this)" tabindex="10" name="state" id="stateId">
+											<option value="">---------Select---------</option>
+										</select>
+									</div>
+							</div>
+							
+							<div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Pin Code<font color="red">*</font></label>
+								<div class="col-xs-7">
+									<input type="text" name="pincode" tabindex="12" onclick="HideError(this)" class="form-control" id="pincode"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="pinCode" /></logic:present>'></input>
+								</div>
+							</div>
+								
+							 <div class="form-group clearfix">
+								<label for="inputEmail" class="control-label col-xs-4"
+									style="text-align: right; line-height: 35px;">Affilation No.</label>
+								<div class="col-xs-7">
+									<input type="text" name="affilno" onclick="HideError(this)"
+										class="form-control" id="affilno" tabindex="14"
+										value='<logic:present name="editlist"><bean:write name="editlist" property="affilno" /></logic:present>'></input>
+								   </div>
+					       </div>
+							
+		<input type="hidden" name="hiddenaddId" name="hiddenaddId" id="hiddenaddId" value='<logic:present name="editlist"><bean:write name="editlist" property="locAddId" /></logic:present>'></input>
+		<input type="hidden" name="hiddencountry" id="hiddencountry" value='<logic:present name="editlist"><bean:write name="editlist" property="countryId" /></logic:present>'></input>
+		<input type="hidden" name="hiddenstate" id="hiddenstate" value='<logic:present name="editlist"><bean:write name="editlist" property="stateId" /></logic:present>'></input>
+		<input type="hidden" name="hiddencity" id="hiddencity" value='<logic:present name="editlist"><bean:write name="editlist" property="cityId" /></logic:present>'></input>
+						
+						 </div>
+							
+							</div>
+						
+						
 						</div>
+						<div class="modal-footer">
+						<span id="save" class="buttons button-blue">Save</span> <span
+							class="buttons button-simple" data-dismiss="modal">Close</span>
+					</div>
+					
+					<input type="hidden" id="actionstatus" value="add" />	
 
 					</div>
 				</div>
@@ -169,6 +374,7 @@
       <input type="hidden" id="custstatus" value="<logic:present name='schlstatus' scope='request' ><bean:write name='schlstatus'/></logic:present>">
 
 			<div id="collapseOne" class="accordion-body collapse in">
+			
 				<div class="row">
 				   <%-- <div class="col-md-6"
 						style="font-family: Roboto,sans-serif; font-size: 13px; color: #000; padding-top: 1%;">	
@@ -240,7 +446,7 @@
 				</div>
 
 			</div>
-		</div>
+		
 	</div>
 </body>
 </html>

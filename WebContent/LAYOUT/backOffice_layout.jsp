@@ -67,7 +67,7 @@
 <body>
 
 	<tiles:insert attribute="header" />
-	<section class="content">
+	<section class="content container-fluid">
 	<div class="row mb">
 	<div class="lftnav col-md-2 smallwidth">
 		<tiles:insert attribute="menu" />

@@ -251,6 +251,8 @@ public class AcademicYearMasterAction extends DispatchAction {
 			ACY_pojo.setStartDate(request.getParameter("startdate"));
 			ACY_pojo.setEndDate(request.getParameter("enddate"));
 			ACY_pojo.setAcadamic_id(request.getParameter("accid"));
+			ACY_pojo.setAction(request.getParameter("action"));
+			
 			
 			
 			String status = new AcademicYearMasterBD().accyearNameCheck(ACY_pojo,userLoggingsVo);
